@@ -6718,3 +6718,183 @@ since == nil
 (C:/WORKS/WS/WS_Android/CR6(R)/app/controllers/texts_controller.rb:40) default_sort_key.to_s=id
 [C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-05-27 18:45:13 +0900]
 since == nil
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-08-20 11:22:28 +0900]
+(C:/WORKS/WS/WS_Android/CR6(R)/app/controllers/texts_controller.rb:211) params[:text] => nil
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-08-20 11:22:28 +0900]
+(C:/WORKS/WS/WS_Android/CR6(R)/app/controllers/texts_controller.rb:26) lang_id.to_s=-1
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-08-20 11:22:28 +0900]
+(C:/WORKS/WS/WS_Android/CR6(R)/app/controllers/texts_controller.rb:40) default_sort_key.to_s=id
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-08-20 11:22:28 +0900]
+since == nil
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-08-20 11:25:10 +0900]
+(C:/WORKS/WS/WS_Android/CR6(R)/app/controllers/texts_controller.rb:229) params[:text] => ActiveSupport::HashWithIndifferentAccess/params[:text][:lang_id].class=String
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-08-20 11:25:10 +0900]
+(C:/WORKS/WS/WS_Android/CR6(R)/app/controllers/texts_controller.rb:238) params[:text] => ActiveSupport::HashWithIndifferentAccess/params[:text][:lang_id]=4
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-08-20 11:25:10 +0900]
+(C:/WORKS/WS/WS_Android/CR6(R)/app/controllers/texts_controller.rb:26) lang_id.to_s=4
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-08-20 11:25:10 +0900]
+(C:/WORKS/WS/WS_Android/CR6(R)/app/controllers/texts_controller.rb:40) default_sort_key.to_s=id
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-08-20 11:25:10 +0900]
+since == nil
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-08-20 11:27:39 +0900]
+(C:/WORKS/WS/WS_Android/CR6(R)/app/controllers/texts_controller.rb:211) params[:text] => nil
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-08-20 11:27:39 +0900]
+(C:/WORKS/WS/WS_Android/CR6(R)/app/controllers/texts_controller.rb:26) lang_id.to_s=-1
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-08-20 11:27:39 +0900]
+(C:/WORKS/WS/WS_Android/CR6(R)/app/controllers/texts_controller.rb:40) default_sort_key.to_s=lang_id
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-08-20 11:27:39 +0900]
+since == nil
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-08-20 11:31:30 +0900]
+(C:/WORKS/WS/WS_Android/CR6(R)/app/controllers/texts_controller.rb:211) params[:text] => nil
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-08-20 11:31:30 +0900]
+(C:/WORKS/WS/WS_Android/CR6(R)/app/controllers/texts_controller.rb:26) lang_id.to_s=-1
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-08-20 11:31:30 +0900]
+(C:/WORKS/WS/WS_Android/CR6(R)/app/controllers/texts_controller.rb:40) default_sort_key.to_s=lang_id
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-08-20 11:31:30 +0900]
+since == nil
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-08-20 11:31:35 +0900]
+(C:/WORKS/WS/WS_Android/CR6(R)/app/controllers/texts_controller.rb:229) params[:text] => ActiveSupport::HashWithIndifferentAccess/params[:text][:lang_id].class=String
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-08-20 11:31:35 +0900]
+(C:/WORKS/WS/WS_Android/CR6(R)/app/controllers/texts_controller.rb:238) params[:text] => ActiveSupport::HashWithIndifferentAccess/params[:text][:lang_id]=4
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-08-20 11:31:35 +0900]
+(C:/WORKS/WS/WS_Android/CR6(R)/app/controllers/texts_controller.rb:26) lang_id.to_s=4
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-08-20 11:31:35 +0900]
+(C:/WORKS/WS/WS_Android/CR6(R)/app/controllers/texts_controller.rb:40) default_sort_key.to_s=id
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-08-20 11:31:35 +0900]
+since == nil
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-08-20 11:48:03 +0900]
+(C:/WORKS/WS/WS_Android/CR6(R)/app/controllers/texts_controller.rb:306) params[:text] => nil
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-08-20 11:48:03 +0900]
+(C:/WORKS/WS/WS_Android/CR6(R)/app/controllers/texts_controller.rb:26) lang_id.to_s=-1
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-08-20 11:48:03 +0900]
+(C:/WORKS/WS/WS_Android/CR6(R)/app/controllers/texts_controller.rb:40) default_sort_key.to_s=lang_id
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-08-20 11:48:03 +0900]
+since == nil
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-08-20 11:48:08 +0900]
+(C:/WORKS/WS/WS_Android/CR6(R)/app/controllers/texts_controller.rb:324) params[:text] => ActiveSupport::HashWithIndifferentAccess/params[:text][:lang_id].class=String
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-08-20 11:48:08 +0900]
+(C:/WORKS/WS/WS_Android/CR6(R)/app/controllers/texts_controller.rb:342) params[:text] => ActiveSupport::HashWithIndifferentAccess/params[:text][:lang_id] => ""
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-08-20 11:48:08 +0900]
+(C:/WORKS/WS/WS_Android/CR6(R)/app/controllers/texts_controller.rb:26) lang_id.to_s=-1
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-08-20 11:48:08 +0900]
+(C:/WORKS/WS/WS_Android/CR6(R)/app/controllers/texts_controller.rb:40) default_sort_key.to_s=id
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-08-20 11:48:08 +0900]
+since == nil
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-08-20 11:48:12 +0900]
+(C:/WORKS/WS/WS_Android/CR6(R)/app/controllers/texts_controller.rb:324) params[:text] => ActiveSupport::HashWithIndifferentAccess/params[:text][:lang_id].class=String
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-08-20 11:48:12 +0900]
+(C:/WORKS/WS/WS_Android/CR6(R)/app/controllers/texts_controller.rb:333) params[:text] => ActiveSupport::HashWithIndifferentAccess/params[:text][:lang_id]=3
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-08-20 11:48:12 +0900]
+(C:/WORKS/WS/WS_Android/CR6(R)/app/controllers/texts_controller.rb:26) lang_id.to_s=3
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-08-20 11:48:12 +0900]
+(C:/WORKS/WS/WS_Android/CR6(R)/app/controllers/texts_controller.rb:40) default_sort_key.to_s=id
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-08-20 11:48:12 +0900]
+since == nil
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-08-20 11:49:21 +0900]
+(C:/WORKS/WS/WS_Android/CR6(R)/app/controllers/texts_controller.rb:324) params[:text] => ActiveSupport::HashWithIndifferentAccess/params[:text][:lang_id].class=String
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-08-20 11:49:21 +0900]
+(C:/WORKS/WS/WS_Android/CR6(R)/app/controllers/texts_controller.rb:333) params[:text] => ActiveSupport::HashWithIndifferentAccess/params[:text][:lang_id]=3
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-08-20 11:49:21 +0900]
+(C:/WORKS/WS/WS_Android/CR6(R)/app/controllers/texts_controller.rb:26) lang_id.to_s=3
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-08-20 11:49:21 +0900]
+(C:/WORKS/WS/WS_Android/CR6(R)/app/controllers/texts_controller.rb:40) default_sort_key.to_s=id
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-08-20 11:49:21 +0900]
+since == nil
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-08-20 11:52:31 +0900]
+(C:/WORKS/WS/WS_Android/CR6(R)/app/controllers/texts_controller.rb:311) params[:text] => nil
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-08-20 11:52:31 +0900]
+(C:/WORKS/WS/WS_Android/CR6(R)/app/controllers/texts_controller.rb:26) lang_id.to_s=-1
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-08-20 11:52:31 +0900]
+(C:/WORKS/WS/WS_Android/CR6(R)/app/controllers/texts_controller.rb:40) default_sort_key.to_s=lang_id
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-08-20 11:52:31 +0900]
+since == nil
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-08-20 11:52:36 +0900]
+(C:/WORKS/WS/WS_Android/CR6(R)/app/controllers/texts_controller.rb:329) params[:text] => ActiveSupport::HashWithIndifferentAccess/params[:text][:lang_id].class=String
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-08-20 11:52:36 +0900]
+(C:/WORKS/WS/WS_Android/CR6(R)/app/controllers/texts_controller.rb:338) params[:text] => ActiveSupport::HashWithIndifferentAccess/params[:text][:lang_id]=3
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-08-20 11:52:36 +0900]
+(C:/WORKS/WS/WS_Android/CR6(R)/app/controllers/texts_controller.rb:26) lang_id.to_s=3
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-08-20 11:52:36 +0900]
+(C:/WORKS/WS/WS_Android/CR6(R)/app/controllers/texts_controller.rb:40) default_sort_key.to_s=id
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-08-20 11:52:36 +0900]
+since == nil
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-08-20 11:52:54 +0900]
+(C:/WORKS/WS/WS_Android/CR6(R)/app/controllers/texts_controller.rb:329) params[:text] => ActiveSupport::HashWithIndifferentAccess/params[:text][:lang_id].class=String
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-08-20 11:52:54 +0900]
+(C:/WORKS/WS/WS_Android/CR6(R)/app/controllers/texts_controller.rb:338) params[:text] => ActiveSupport::HashWithIndifferentAccess/params[:text][:lang_id]=5
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-08-20 11:52:54 +0900]
+(C:/WORKS/WS/WS_Android/CR6(R)/app/controllers/texts_controller.rb:26) lang_id.to_s=5
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-08-20 11:52:54 +0900]
+(C:/WORKS/WS/WS_Android/CR6(R)/app/controllers/texts_controller.rb:40) default_sort_key.to_s=id
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-08-20 11:52:54 +0900]
+since == nil
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-08-20 11:54:49 +0900]
+text.id=10/Num of words=0
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-08-20 11:54:53 +0900]
+(C:/WORKS/WS/WS_Android/CR6(R)/app/controllers/texts_controller.rb:311) params[:text] => nil
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-08-20 11:54:53 +0900]
+(C:/WORKS/WS/WS_Android/CR6(R)/app/controllers/texts_controller.rb:26) lang_id.to_s=-1
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-08-20 11:54:53 +0900]
+(C:/WORKS/WS/WS_Android/CR6(R)/app/controllers/texts_controller.rb:40) default_sort_key.to_s=id
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-08-20 11:54:53 +0900]
+since == nil
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-08-20 11:55:04 +0900]
+(C:/WORKS/WS/WS_Android/CR6(R)/app/controllers/texts_controller.rb:329) params[:text] => ActiveSupport::HashWithIndifferentAccess/params[:text][:lang_id].class=String
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-08-20 11:55:04 +0900]
+(C:/WORKS/WS/WS_Android/CR6(R)/app/controllers/texts_controller.rb:338) params[:text] => ActiveSupport::HashWithIndifferentAccess/params[:text][:lang_id]=3
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-08-20 11:55:04 +0900]
+(C:/WORKS/WS/WS_Android/CR6(R)/app/controllers/texts_controller.rb:26) lang_id.to_s=3
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-08-20 11:55:04 +0900]
+(C:/WORKS/WS/WS_Android/CR6(R)/app/controllers/texts_controller.rb:40) default_sort_key.to_s=id
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-08-20 11:55:04 +0900]
+since == nil
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-08-20 11:55:08 +0900]
+(C:/WORKS/WS/WS_Android/CR6(R)/app/controllers/texts_controller.rb:329) params[:text] => ActiveSupport::HashWithIndifferentAccess/params[:text][:lang_id].class=String
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-08-20 11:55:08 +0900]
+(C:/WORKS/WS/WS_Android/CR6(R)/app/controllers/texts_controller.rb:338) params[:text] => ActiveSupport::HashWithIndifferentAccess/params[:text][:lang_id]=3
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-08-20 11:55:08 +0900]
+(C:/WORKS/WS/WS_Android/CR6(R)/app/controllers/texts_controller.rb:26) lang_id.to_s=3
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-08-20 11:55:08 +0900]
+(C:/WORKS/WS/WS_Android/CR6(R)/app/controllers/texts_controller.rb:40) default_sort_key.to_s=id
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-08-20 11:55:08 +0900]
+since == nil
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-08-20 11:55:28 +0900]
+(C:/WORKS/WS/WS_Android/CR6(R)/app/controllers/texts_controller.rb:329) params[:text] => ActiveSupport::HashWithIndifferentAccess/params[:text][:lang_id].class=String
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-08-20 11:55:28 +0900]
+(C:/WORKS/WS/WS_Android/CR6(R)/app/controllers/texts_controller.rb:338) params[:text] => ActiveSupport::HashWithIndifferentAccess/params[:text][:lang_id]=3
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-08-20 11:55:28 +0900]
+(C:/WORKS/WS/WS_Android/CR6(R)/app/controllers/texts_controller.rb:26) lang_id.to_s=3
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-08-20 11:55:28 +0900]
+(C:/WORKS/WS/WS_Android/CR6(R)/app/controllers/texts_controller.rb:40) default_sort_key.to_s=id
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-08-20 11:55:28 +0900]
+since == nil
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-08-20 11:55:33 +0900]
+(C:/WORKS/WS/WS_Android/CR6(R)/app/controllers/texts_controller.rb:329) params[:text] => ActiveSupport::HashWithIndifferentAccess/params[:text][:lang_id].class=String
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-08-20 11:55:33 +0900]
+(C:/WORKS/WS/WS_Android/CR6(R)/app/controllers/texts_controller.rb:338) params[:text] => ActiveSupport::HashWithIndifferentAccess/params[:text][:lang_id]=3
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-08-20 11:55:33 +0900]
+(C:/WORKS/WS/WS_Android/CR6(R)/app/controllers/texts_controller.rb:26) lang_id.to_s=3
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-08-20 11:55:33 +0900]
+(C:/WORKS/WS/WS_Android/CR6(R)/app/controllers/texts_controller.rb:40) default_sort_key.to_s=id
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-08-20 11:55:33 +0900]
+since == nil
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-08-20 11:55:39 +0900]
+(C:/WORKS/WS/WS_Android/CR6(R)/app/controllers/texts_controller.rb:329) params[:text] => ActiveSupport::HashWithIndifferentAccess/params[:text][:lang_id].class=String
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-08-20 11:55:39 +0900]
+(C:/WORKS/WS/WS_Android/CR6(R)/app/controllers/texts_controller.rb:347) params[:text] => ActiveSupport::HashWithIndifferentAccess/params[:text][:lang_id] => ""
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-08-20 11:55:39 +0900]
+(C:/WORKS/WS/WS_Android/CR6(R)/app/controllers/texts_controller.rb:26) lang_id.to_s=-1
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-08-20 11:55:39 +0900]
+(C:/WORKS/WS/WS_Android/CR6(R)/app/controllers/texts_controller.rb:40) default_sort_key.to_s=id
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-08-20 11:55:39 +0900]
+since == nil
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-08-20 11:55:43 +0900]
+(C:/WORKS/WS/WS_Android/CR6(R)/app/controllers/texts_controller.rb:329) params[:text] => ActiveSupport::HashWithIndifferentAccess/params[:text][:lang_id].class=String
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-08-20 11:55:43 +0900]
+(C:/WORKS/WS/WS_Android/CR6(R)/app/controllers/texts_controller.rb:347) params[:text] => ActiveSupport::HashWithIndifferentAccess/params[:text][:lang_id] => ""
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-08-20 11:55:43 +0900]
+(C:/WORKS/WS/WS_Android/CR6(R)/app/controllers/texts_controller.rb:26) lang_id.to_s=-1
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-08-20 11:55:43 +0900]
+(C:/WORKS/WS/WS_Android/CR6(R)/app/controllers/texts_controller.rb:40) default_sort_key.to_s=id
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-08-20 11:55:43 +0900]
+since == nil
