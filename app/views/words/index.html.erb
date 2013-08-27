@@ -3,6 +3,27 @@
 (<%= link_to 'New Word', new_word_path %>)
 	<a href="#bottom" style="margin: 0px 25px;">(To bottom)</a>
 
+<%# if @words.size > @per_page %>
+
+<div>
+
+	<% result = (will_paginate @words, :prev_label=>'«Prev', :next_label=>'Next»') %>
+	
+	<% if result != nil %>
+	
+		<hr />
+		
+			<%= will_paginate @words, :prev_label=>'«Prev', :next_label=>'Next»' %>
+			
+		<hr />
+	
+	<% end %>
+	
+</div>
+
+
+<%# end %>
+
 <table border="2">
 
 	<%= render :partial => "words/table/index_table_header" %>
@@ -10,6 +31,20 @@
 	<%= render :partial => "words/table/index_table_entries" %>
 	
 </table>
+
+<div>
+
+	<% if result != nil %>
+	
+		<hr />
+		
+			<%= will_paginate @words, :prev_label=>'«Prev', :next_label=>'Next»' %>
+			
+		<hr />
+	
+	<% end %>
+	
+</div>
 
 <%= link_to 'New Word', new_word_path %><a href="#top" style="margin: 0px 25px;">(To top)</a>
 <a name="bottom"></a>
