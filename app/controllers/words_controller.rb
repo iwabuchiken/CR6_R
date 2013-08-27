@@ -7,9 +7,14 @@ class WordsController < ApplicationController
   # GET /words
   # GET /words.json
   def index
-      # @words = Word.all
   
-      # default_sort_key = :id
+      #=====================================
+      #
+      # Variables
+      #
+      #=====================================
+      @per_page = 10
+
       #=====================================
       #
       # Params
@@ -33,7 +38,8 @@ class WordsController < ApplicationController
       # Since =================================
       since = params[:since]
       
-      @words = _index_GetWords_FilterSince(param_sort, default_sort_key, since)
+      @words = _index_GetWords_FilterSince(
+                    param_sort, default_sort_key, since, lang_id)
       
       #=====================================
       #
@@ -60,12 +66,31 @@ class WordsController < ApplicationController
     end
   end
 
-  def _index_GetWords_FilterSince(param_sort, default_sort_key, since)
+  def _index_GetWords_FilterSince(param_sort, default_sort_key, since, lang_id)
+
+      
     
       if since == nil
 
         logout("since == nil")
-        words = Word.all
+        #words = Word.all
+        
+        if lang_id == -1
+              words = Word.paginate(
+                            :page => params[:page],
+                            :order => 'created_at asc',
+                            :per_page => @per_page)
+                            
+        else 
+        
+              words = Word.where(:lang_id => lang_id).paginate(
+                            :page => params[:page],
+                            :order => 'created_at asc',
+                            :per_page => @per_page
+                            )        
+            
+        
+        end
         
         # => REF sort_by! http://ref.xaio.jp/ruby/classes/array/sort
         # => REF {...} http://stackoverflow.com/questions/5739158/rails-ruby-how-to-sort-an-array answered Apr 21 '11 at 3:36

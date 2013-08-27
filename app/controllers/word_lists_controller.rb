@@ -7,6 +7,14 @@ class WordListsController < ApplicationController
   def index
       #=====================================
       #
+      # Variables
+      #
+      #=====================================
+#      @per_page = 10
+      @per_page = 5
+
+      #=====================================
+      #
       # Params
       #
       #=====================================
@@ -21,7 +29,8 @@ class WordListsController < ApplicationController
       # Since =================================
       since = params[:since]
       
-      @word_lists = _index_GetWordLists_FilterSince(param_sort, default_sort_key, since)
+      @word_lists = _index_GetWordLists_FilterSince(
+                    param_sort, default_sort_key, since, lang_id)
       
       #=====================================
       #
@@ -40,87 +49,38 @@ class WordListsController < ApplicationController
         
       end
 
-# 
-    # # Sort =================================
-    # param_sort = params[:sort]
-#     
-# 
-#     
-    # # Since =================================
-    # since = params[:since]
-#     
-    # if since == nil
-# 
-      # logout("since == nil")
-      # @word_lists = WordList.all
-#       
-      # @word_lists.sort_by!{|word_list| word_list[default_sort_key]}
-#       
-    # else
-#       
-        # if is_numeric?(since)
-        # # if since.numeric?
-#       
-          # @word_lists = 
-              # WordList.find(
-                      # :all,
-                      # :conditions => [
-                                # # "updated_at_mill > ?", since.to_i])
-                                # "created_at_mill > ?", since.to_i],
-                      # :order => default_sort_key.to_s
-                      # )
-                              # # "created_at_mill > ?", since.to_i + (9*60*60)])
-                              # # "created_at > ?",
-                              # # Time.at(since.to_i / 1000).utc])
-                              # # Time.at(since.to_i / 1000).utc + (9*60*60)])
-# 
-                              # # REF=> http://www.treeder.com/2011/06/converting-ruby-time-to-milliseconds.html
-                              # # Time.at(since.to_i / 1000).utc + (9*60*60 + 1)])
-# 
-#                               
-                    # # :conditions => ["created_at > ?", Time.at(since.to_i / 1000)])
-#           
-          # # logout(Time.at(since.to_i / 1000) + "/utc=" + Time.at(since.to_i / 1000).utc)
-          # # logout(Time.at(since.to_i / 1000).to_s + "/utc=" + Time.at(since.to_i / 1000).utc.to_s)
-          # logout((Time.at(since.to_i / 1000) + (9*60*60 + 1)).to_s\
-                  # + "/utc="\
-                  # + (Time.at(since.to_i / 1000).utc + (9*60*60 + 1)).to_s\
-                  # + "/since=" + since.to_i.to_s
-                  # )
-#           
-          # # logout((Time.at(since.to_i / 1000) + (9*60*60)).to_s\
-                  # # + "/utc="\
-                  # # + (Time.at(since.to_i / 1000).utc + (9*60*60)).to_s)
-#           
-          # # @texts.paginate
-#           
-        # else
-          # logout("since -> " + since + "(" + Time.at(since.to_i / 1000) + ")")
-#           
-          # @word_lists =
-              # WordList.all
-#           
-          # @word_lists.sort_by!{|word_list| word_list[default_sort_key]}
-#           
-        # end#if since.numeric?
-# 
-      # # @texts = Text.find(:all, :conditions => ["created_at > ?", Time.at(since.to_i / 1000).utc])
-#       
-    # end#if since == nil    
-
-
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @word_lists }
     end
   end
 
-  def _index_GetWordLists_FilterSince(param_sort, default_sort_key, since)
+  def _index_GetWordLists_FilterSince(param_sort, default_sort_key, since, lang_id)
     
       if since == nil
 
         logout("since == nil")
-        word_lists = WordList.all
+#        word_lists = WordList.all
+ 
+        if lang_id == -1
+              word_lists = WordList.paginate(
+                            :page => params[:page],
+                            :order => 'created_at asc',
+                            :per_page => @per_page)
+                            
+        else 
+        
+              word_lists = WordList.where(:lang_id => lang_id).paginate(
+                            :page => params[:page],
+                            :order => 'created_at asc',
+                            :per_page => @per_page
+                            )        
+            
+        
+        end
+
+ 
+ 
         
         # => REF sort_by! http://ref.xaio.jp/ruby/classes/array/sort
         # => REF {...} http://stackoverflow.com/questions/5739158/rails-ruby-how-to-sort-an-array answered Apr 21 '11 at 3:36
