@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 # => http://stackoverflow.com/questions/1698225/where-to-put-common-code-found-in-multiple-models ## "answered Nov 8 '09 at 23:29" 
 require_dependency 'basic'
 include Basic
@@ -66,6 +67,12 @@ class TextsController < ApplicationController
           # @texts.sort!{|item| item.lang_id == lang_id} # => undefined method `>' for true:TrueClass
         
       end
+      
+      #=====================================
+      #
+      # Edit text => Insert "<br/>" after '。' char
+      #
+      #=====================================      
       
   
       # @texts = Text.all
@@ -383,6 +390,10 @@ class TextsController < ApplicationController
     if @text != nil
       
       @text.text = _show__1_colorize_words(@text)
+      
+      point = "。"
+      
+      @text.text = @text.text.gsub(/#{point}/, "。<br/>")
       
     end#if @text != nil
     
