@@ -7132,3 +7132,9 @@ text.id=1/Num of words=8
 (C:/WORKS/WS/WS_Android/CR6(R)/app/controllers/words_controller.rb:21) lang_id.to_s=-1
 [C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-08-27 12:48:47 +0900]
 since == nil
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-08-27 13:37:44 +0900]
+(C:/WORKS/WS/WS_Android/CR6(R)/app/controllers/word_lists_controller.rb:248) params[:word_list] => nil
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-08-27 13:37:44 +0900]
+since == nil
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-08-27 13:37:44 +0900]
+(C:/WORKS/WS/WS_Android/CR6(R)/app/controllers/word_lists_controller.rb:31) lang_id=-1
