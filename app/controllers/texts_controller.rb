@@ -393,7 +393,7 @@ class TextsController < ApplicationController
       
       point = "。"
       
-      @text.text = @text.text.gsub(/#{point}/, "。<br/>")
+      @text.text = @text.text.gsub(/#{point}/, "。<br/>-")
       
     end#if @text != nil
     

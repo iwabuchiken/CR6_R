@@ -19,6 +19,8 @@ git init && g a . && gitk
 g a . && gitk
 
 git log --grep=master -6
+g log --grep="\bm\b"
+
 
 [Set up 2013/04/20 14:45:46]----------------------------
 #bundle install
