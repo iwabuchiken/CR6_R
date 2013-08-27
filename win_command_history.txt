@@ -6,17 +6,12 @@ a p && pushd C:\WORKS\WS\WS_Android\CR6(R) && gitk
 pushd C:\WORKS\WS\WS_Android\CR6(R)
 gitk
 
-C:\WORKS\PROGRAMS\FreeMind\Freemind.exe C:\WORKS\WORKSPACES_ANDROID\FM\NewsReader3_R\NewsReader3.mm
-
 a p && pushd C:\WORKS\WS\WS_Android\CR6(R) && rails s --port 3001
 
 pushd C:\WORKS\WS\WS_Android\CR6(R)
 rails s --port 3001
 
-
-
-pushd C:\WORKS\WORKSPACES_APTANA\NewsReader3
-
+g p origin master && g p heroku master
 
 
 [Git]

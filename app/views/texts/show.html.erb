@@ -7,53 +7,91 @@
 
 <p>
   <b>Text:</b>
+  <br />
   <!-- REF raw http://stackoverflow.com/questions/4251284/raw-vs-html-safe-vs-h-to-unescape-html asked Nov 22 '10 at 23:27 -->
   <%= raw @text.text %>
   <%#= @text.text %>
 </p>
 
-<p>
-  <b>Title:</b>
-  <%= @text.title %>
-</p>
+<div id="file_info">
+	
+	
+	<table>
 
-<p>
-  <b>Word ids:</b>
-  <%= @text.word_ids %>
-</p>
+		<tr>
+			<td>
+				<b>Title</b>
+			</td>
+			<td>
+  				<%= @text.title %>
+			</td>
+		</tr>
+		
+		<tr>
+			<td>
+				<b>Word ids</b>
+			</td>
+			<td>
+  				<%= @text.word_ids %>		
+			</td>
+		</tr>
+		
+		<tr>
+			<td>
+				<b>Url</b>
+			</td>
+			<td>
+  				<%= link_to @text.url, @text.url, :target => "_blank" %>
+			</td>
+		</tr>
+		
+		<tr>
+			<td>
+				<b>Genre</b>
+			</td>
+			<td>
+				<%= @text.genre_id %>
+			</td>
+		</tr>
+		
+		<tr>
+			<td>
+				<b>Subgenre:</b>
+			</td>
+			<td>
+				<%= @text.subgenre_id %>		
+			</td>
+		</tr>
+		
+		<tr>
+			<td>
+				<b>Lang</b>
+			</td>
+			<td>
+				<%= @text.lang_id %>		
+			</td>
+		</tr>
 
-<p>
-  <b>Url:</b>
-  <%#= @text.url %>
-  <%= link_to @text.url, @text.url, :target => "_blank" %>
-  
-</p>
-
-<p>
-  <b>Genre:</b>
-  <%= @text.genre_id %>
-</p>
-
-<p>
-  <b>Subgenre:</b>
-  <%= @text.subgenre_id %>
-</p>
-
-<p>
-  <b>Lang:</b>
-  <%= @text.lang_id %>
-</p>
-
-<p>
-  <b>Memo:</b>
-  <%= @text.memo %>
-</p>
-
-<p>
-  <b>Dbid:</b>
-  <%= @text.dbId %>
-</p>
-
+		<tr>
+			<td>
+				<b>Memo:</b>
+			</td>
+			<td>
+				<%= @text.memo %>		
+			</td>
+		</tr>
+		
+		<tr>
+			<td>
+				<b>Dbid:</b>
+			</td>
+			<td>
+				<%= @text.dbId %>		
+			</td>
+		</tr>
+		
+	</table>
+</div>
 
 <%= link_to 'Edit', edit_text_path(@text) %> |
 <%= link_to 'Back', texts_path %> |
@@ -61,13 +99,14 @@
 <!--
 	REF parameter http://yoshifumisato.jeez.jp/wordpress/post/rails/723
 -->
-<%= link_to 'New Word',
-			:controller =>"words",:action =>"new",
-			:text_id => @text.id, :lang_id => @text.lang_id
-			 %>
 
 <hr />
 <%= link_to 'Build word list',
 			:controller =>"texts",
 			:action =>"build_word_list",
-			:text_id => @text.id %>
+			:text_id => @text.id %> |
+
+<%= link_to 'New Word',
+			:controller =>"words",:action =>"new",
+			:text_id => @text.id, :lang_id => @text.lang_id
+			 %>

@@ -7,7 +7,29 @@
     <!-- <td><%= link_to text.id, :controller => 'texts' %></td> -->
     <!-- <td><%#= link_to text.id, :controller => 'texts', {:remote => true} %></td> -->	<!-- syntax error, unexpected ')', expecting tASSOC -->
     
-    <td class="text"><%= text.text %></td>
+    <td class="text">
+    	<% if text.text != nil %>
+    	
+    		<% max_length = 80 %>
+    		
+    		<% if text.text.length > max_length %> 
+    		
+    			<%= text.text[0..max_length] %> ...
+    			
+    		<% else %>
+    		
+    			<%= text.text %>
+    		
+    		<% end %>
+    		
+    	<% else %>
+    	
+    		No text
+    	
+    	<% end %>
+    	
+    </td>
+    
     <!-- <td><%#= text.text %></td> -->
     <td><%= text.title %></td>
     <td><%= text.word_ids %></td>
