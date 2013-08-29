@@ -5,13 +5,13 @@ function showMessage(msg) {
 };
 
 $(document).ready(function(){
-  $("p").click(function(){
-    // $(this).hide();
-    
-    // REF css() http://stackoverflow.com/questions/12197828/how-to-set-style-display-of-an-html-element answered Aug 30 '12 at 13:22
-    // REF http://api.jquery.com/css/
-    $(this).css("background-color", "blue");
-  });
+//  $("p").click(function(){
+//    // $(this).hide();
+//    
+//    // REF css() http://stackoverflow.com/questions/12197828/how-to-set-style-display-of-an-html-element answered Aug 30 '12 at 13:22
+//    // REF http://api.jquery.com/css/
+//    $(this).css("background-color", "blue");
+//  });
   
   $("#show_button").click(function(){
 

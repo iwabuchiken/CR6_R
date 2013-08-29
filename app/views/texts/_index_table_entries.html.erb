@@ -2,57 +2,69 @@
   <tr>
     
     <td><%= link_to text.id, text %></td>
-    <!-- <td><%#= link_to text.id, text, :remote => true %></td> --> <!-- <td><a href="/texts/1" data-remote="true">1</a></td> -->
-    <!-- <td><%#= link_to text.id, :controller => 'texts', :action => 'show', :remote => true %></td> -->
-    <!-- <td><%= link_to text.id, :controller => 'texts' %></td> -->
-    <!-- <td><%#= link_to text.id, :controller => 'texts', {:remote => true} %></td> -->	<!-- syntax error, unexpected ')', expecting tASSOC -->
     
-    <td class="text">
-    	<% if text.text != nil %>
+    <td colspan="5" style="background-color: yellow;">
     	
-    		<% max_length = 80 %>
-    		
-    		<% if text.text.length > max_length %> 
-    		
-    			<%= text.text[0..max_length] %> ...
+    	<%= link_to text.title, text %>
     			
-    		<% else %>
-    		
-    			<%= text.text %>
-    		
-    		<% end %>
-    		
-    	<% else %>
-    	
-    		No text
-    	
-    	<% end %>
-    	
     </td>
     
-    <!-- <td><%#= text.text %></td> -->
-    <td><%= text.title %></td>
-    <td><%= text.word_ids %></td>
-    <td class="url">
-    	<%#= text.url %>
-    	<%= link_to text.url, text.url, :target => "_blank" %>
-    </td>
-    <td><%= text.genre_id %></td>
-    <td><%= text.subgenre_id %></td>
+    <td colspan="6"><%= text.word_ids %></td>
+    
+   </tr>
+   
+	<tr>
+    
+		<td colspan="6" rowspan="3" class="text">
+			<% if text.text != nil %>
+			
+				<% max_length = 80 %>
+				
+				<% if text.text.length > max_length %> 
+				
+					<%= text.text[0..max_length] %> ...
+					
+				<% else %>
+				
+					<%= text.text %>
+				
+				<% end %>
+				
+			<% else %>
+			
+				No text
+			
+			<% end %>
+			
+		</td>
+		
+	    <td colspan="6" class="url">
+	    	<%#= text.url %>
+	    	<%= link_to text.url, text.url, :target => "_blank" %>
+	    </td>
 
-	<td>
-	    <% if not text.lang == nil %>
-	    	<%= text.lang.name %>
-		<% else %>
-			<%= text.lang_id %>(text.lang => nil)
-	    <% end %>
-	</td>
+    
+	</tr>
 	
-    <!-- <td><%#= text.lang %></td> -->
-    <!-- <td><%#= text.lang_id %></td> -->
-    <td><%= text.memo %></td>
-    <td><%= text.dbId %></td>
-    <td><%= text.created_at_mill %></td>
-    <td><%= link_to 'Destroy', text, confirm: 'Are you sure?', method: :delete, :class => 'link' %></td>
-  </tr>
+	<tr>
+		<td>
+		    <% if not text.lang == nil %>
+		    	<%= text.lang.name %>
+			<% else %>
+				<%= text.lang_id %>(text.lang => nil)
+		    <% end %>
+		</td>
+
+		<td><%= text.genre_id %></td>
+    	<td><%= text.subgenre_id %></td>
+    	
+	</tr>
+	
+	<tr>
+		<td><%= text.memo %></td>
+		
+		<td><%= text.dbId %></td>
+    	<td><%= text.created_at_mill %></td>
+    	
+	</tr>
 <% end %>
