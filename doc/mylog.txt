@@ -7825,3 +7825,39 @@ since == nil
 [C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-08-29 19:00:15 +0900]
 since == nil
 >>>>>>> B13_CHANGE-3_modify-views_texts#index_paginate
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-08-30 18:51:39 +0900]
+(C:/WORKS/WS/WS_Android/CR6(R)/app/controllers/words_controller.rb:210) params[:text] => nil
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-08-30 18:51:39 +0900]
+(C:/WORKS/WS/WS_Android/CR6(R)/app/controllers/words_controller.rb:26) lang_id.to_s=-1
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-08-30 18:51:39 +0900]
+since == nil
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-08-30 18:53:07 +0900]
+(C:/WORKS/WS/WS_Android/CR6(R)/app/controllers/words_controller.rb:212) params[:text] => nil
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-08-30 18:53:07 +0900]
+(C:/WORKS/WS/WS_Android/CR6(R)/app/controllers/words_controller.rb:26) lang_id.to_s=-1
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-08-30 18:53:07 +0900]
+since == nil
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-08-30 18:53:20 +0900]
+(C:/WORKS/WS/WS_Android/CR6(R)/app/controllers/words_controller.rb:212) params[:text] => nil
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-08-30 18:53:20 +0900]
+(C:/WORKS/WS/WS_Android/CR6(R)/app/controllers/words_controller.rb:26) lang_id.to_s=-1
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-08-30 18:53:20 +0900]
+since == nil
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-08-30 18:53:25 +0900]
+(C:/WORKS/WS/WS_Android/CR6(R)/app/controllers/words_controller.rb:212) params[:text] => nil
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-08-30 18:53:25 +0900]
+(C:/WORKS/WS/WS_Android/CR6(R)/app/controllers/words_controller.rb:26) lang_id.to_s=-1
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-08-30 18:53:25 +0900]
+since == nil
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-08-30 18:54:26 +0900]
+(C:/WORKS/WS/WS_Android/CR6(R)/app/controllers/words_controller.rb:212) params[:text] => nil
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-08-30 18:54:26 +0900]
+(C:/WORKS/WS/WS_Android/CR6(R)/app/controllers/words_controller.rb:26) lang_id.to_s=-1
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-08-30 18:54:26 +0900]
+since == nil
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-08-30 18:54:31 +0900]
+(C:/WORKS/WS/WS_Android/CR6(R)/app/controllers/words_controller.rb:212) params[:text] => nil
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-08-30 18:54:31 +0900]
+(C:/WORKS/WS/WS_Android/CR6(R)/app/controllers/words_controller.rb:26) lang_id.to_s=-1
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-08-30 18:54:31 +0900]
+since == nil

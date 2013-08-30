@@ -6,7 +6,8 @@
 			
 			<span style="font-weight: normal; font-size: smaller">
 				
-				(<%= @words.size %>)
+				(<%= @all_words.size %>)
+				<!-- (<%#= @words.size %>) -->
 				
 			</span> (
 			
@@ -14,7 +15,8 @@
 				
 				<% @langs.each do |lang| %>
 				
-					<%= lang.name %>: <%= @words.select{|word| word.lang_id == lang.id}.size%> / 
+					<%= lang.name %>: <%= @all_words.select{|word| word.lang_id == lang.id}.size%> / 
+					<!-- <%#= lang.name %>: <%#= @words.select{|word| word.lang_id == lang.id}.size%> / --> 
 					
 				<% end %> 
 				

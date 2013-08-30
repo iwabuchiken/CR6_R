@@ -41,6 +41,8 @@ class WordsController < ApplicationController
       @words = _index_GetWords_FilterSince(
                     param_sort, default_sort_key, since, lang_id)
       
+      @all_words = Word.all()
+      
       #=====================================
       #
       # Filtering: lang_id

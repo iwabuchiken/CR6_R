@@ -558,6 +558,6 @@ bundle exec rake db:migrate
 
 heroku run rake db:migrate
 
-bundle exec rake assets:precompile
+g p origin master && g p heroku master
 
 ============EOF============
