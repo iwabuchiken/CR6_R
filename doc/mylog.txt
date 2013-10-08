@@ -7861,3 +7861,23 @@ since == nil
 (C:/WORKS/WS/WS_Android/CR6(R)/app/controllers/words_controller.rb:26) lang_id.to_s=-1
 [C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-08-30 18:54:31 +0900]
 since == nil
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-10-08 10:52:40 +0900]
+Starting... sub1
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-10-08 10:52:40 +0900]
+param_destroy_word_list => nil
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-10-08 10:57:49 +0900]
+Starting... sub1
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-10-08 10:57:49 +0900]
+param_destroy_word_list => nil
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-10-08 10:58:17 +0900]
+Starting... sub1
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-10-08 10:58:17 +0900]
+param_destroy_word_list => nil
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-10-08 10:58:23 +0900]
+Starting... sub1
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-10-08 10:58:23 +0900]
+param_destroy_word_list => nil
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-10-08 11:00:08 +0900]
+Starting... sub1
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-10-08 11:00:08 +0900]
+param_destroy_word_list => nil
