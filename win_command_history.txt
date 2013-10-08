@@ -560,4 +560,7 @@ heroku run rake db:migrate
 
 g p origin master && g p heroku master
 
+[20131008_103802]-------------------------------------
+bundle exec rake assets:precompile
+
 ============EOF============

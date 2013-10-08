@@ -4,6 +4,11 @@
 	<a name="top">Admin#main</a>
 </h1>
 
+<div>
+	<!-- http://www.iconsdb.com/royal-blue-icons/linux-icon.html -->
+	<img src="/images/linux-64.jpg" />
+</div>
+
 <a href="#bottom" style="margin: 0px 25px;">(To bottom)</a>
 
 <p>Find me in app/views/admin/main.html.erb</p>
@@ -46,17 +51,27 @@
 <hr />
 
 
-
 <!-- <div id="logs"> -->
 	
 <!-- REF display http://stackoverflow.com/questions/4474327/how-to-make-a-div-hidden-by-default-made-by-a-content-tag-for -->
 <div id="logs" style="display: none;">
+	
+	<a name="log_top"></a>
+	
+	<a href="#bottom" style="margin: 0px 25px;">(To bottom)</a>
+
+	
+	<br />
 
 	<% for i in 0..@contentArray.length - 1 %>
 	
 		<%= @contentArray[i] %><br />
 	
 	<% end %>
+	
+	<a href="#log_top" style="margin: 0px 25px;">(To log top)</a>
+	
+	<br />
 	
 	<input type="button" value="Hide log"   class="hide_button" disabled/>
 	
