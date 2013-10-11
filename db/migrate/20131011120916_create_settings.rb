@@ -1,7 +1,7 @@
 class CreateSettings < ActiveRecord::Migration
   def change
     create_table :settings do |t|
-      t.mobile_view :boolean
+      t.boolean :mobile_view
 
       t.timestamps
     end

@@ -566,5 +566,10 @@ bundle exec rake assets:precompile
 [20131011_205503]-------------------------------------
 rails generate scaffold Settings boolean:mobile_view
 
+rails destroy scaffold Settings
+
+rails generate scaffold Settings mobile_view:boolean
+
+bundle exec rake db:migrate
 
 ============EOF============

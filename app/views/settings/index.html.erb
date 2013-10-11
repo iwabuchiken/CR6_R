@@ -2,7 +2,7 @@
 
 <table>
   <tr>
-    <th>Boolean</th>
+    <th>Mobile view</th>
     <th></th>
     <th></th>
     <th></th>
@@ -10,7 +10,7 @@
 
 <% @settings.each do |setting| %>
   <tr>
-    <td><%= setting.boolean %></td>
+    <td><%= setting.mobile_view %></td>
     <td><%= link_to 'Show', setting %></td>
     <td><%= link_to 'Edit', edit_setting_path(setting) %></td>
     <td><%= link_to 'Destroy', setting, confirm: 'Are you sure?', method: :delete %></td>
