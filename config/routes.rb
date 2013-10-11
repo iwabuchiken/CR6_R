@@ -1,5 +1,7 @@
 CR6R::Application.routes.draw do
   
+  resources :settings
+
   # get "members#login"
   # post "members#login"
   get "members/login"

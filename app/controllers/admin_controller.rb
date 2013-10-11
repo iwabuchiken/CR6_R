@@ -2,6 +2,9 @@ require_dependency 'basic'
 include Basic
 
 class AdminController < ApplicationController
+  
+  # layout "layout_admin"
+  
   def main
     
     target = "doc/mylog.txt"
@@ -71,15 +74,22 @@ class AdminController < ApplicationController
     
       flash[:notice] = "word_list object destroyed: " + @counter.to_s
       
+      #REF http://amigobellick.blog.fc2.com/blog-entry-16.html
+      render layout: "layout_admin" 
+      
     elsif param_refactor_text_ids != nil
       
       _sub1__2_refactor_text_ids()
       
       flash[:notice] = "text_ids updated: " + @counter.to_s
+
+      render layout: "layout_admin"      
       
     else
       
       logout("param_destroy_word_list => nil")
+      
+      render layout: "layout_admin"
       
     end
 

@@ -7881,3 +7881,61 @@ param_destroy_word_list => nil
 Starting... sub1
 [C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-10-08 11:00:08 +0900]
 param_destroy_word_list => nil
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-10-08 11:10:40 +0900]
+Starting... sub1
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-10-08 11:10:40 +0900]
+param_destroy_word_list => nil
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-10-08 11:12:56 +0900]
+Starting... sub1
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-10-08 11:12:56 +0900]
+param_destroy_word_list => nil
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-10-08 11:13:01 +0900]
+Starting... sub1
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-10-08 11:13:01 +0900]
+param_destroy_word_list => nil
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-10-10 15:28:55 +0900]
+(C:/WORKS/WS/WS_Android/CR6(R)/app/controllers/texts_controller.rb:318) params[:text] => nil
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-10-10 15:28:55 +0900]
+(C:/WORKS/WS/WS_Android/CR6(R)/app/controllers/texts_controller.rb:27) lang_id.to_s=-1
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-10-10 15:28:55 +0900]
+(C:/WORKS/WS/WS_Android/CR6(R)/app/controllers/texts_controller.rb:41) default_sort_key.to_s=id
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-10-10 15:28:55 +0900]
+since == nil
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-10-10 15:29:03 +0900]
+(C:/WORKS/WS/WS_Android/CR6(R)/app/controllers/texts_controller.rb:318) params[:text] => nil
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-10-10 15:29:03 +0900]
+(C:/WORKS/WS/WS_Android/CR6(R)/app/controllers/texts_controller.rb:27) lang_id.to_s=-1
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-10-10 15:29:03 +0900]
+(C:/WORKS/WS/WS_Android/CR6(R)/app/controllers/texts_controller.rb:41) default_sort_key.to_s=id
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-10-10 15:29:03 +0900]
+since == nil
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-10-10 15:29:06 +0900]
+text.id=10/Num of words=0
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-10-10 15:31:51 +0900]
+text.id=10/Num of words=0
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-10-10 15:32:23 +0900]
+text.id=10/Num of words=0
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-10-10 15:34:00 +0900]
+text.id=10/Num of words=0
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-10-10 15:35:42 +0900]
+text.id=10/Num of words=0
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-10-10 15:36:01 +0900]
+Starting... sub1
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-10-10 15:36:01 +0900]
+param_destroy_word_list => nil
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-10-10 15:38:15 +0900]
+Starting... sub1
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-10-10 15:38:15 +0900]
+param_destroy_word_list => nil
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-10-10 15:49:56 +0900]
+(C:/WORKS/WS/WS_Android/CR6(R)/app/controllers/texts_controller.rb:318) params[:text] => nil
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-10-10 15:49:56 +0900]
+(C:/WORKS/WS/WS_Android/CR6(R)/app/controllers/texts_controller.rb:27) lang_id.to_s=-1
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-10-10 15:49:56 +0900]
+(C:/WORKS/WS/WS_Android/CR6(R)/app/controllers/texts_controller.rb:41) default_sort_key.to_s=id
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-10-10 15:49:56 +0900]
+since == nil
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-10-11 20:57:29 +0900]
+Starting... sub1
+[C:/WORKS/WS/WS_Android/CR6(R)/lib/basic.rb /17 2013-10-11 20:57:29 +0900]
+param_destroy_word_list => nil

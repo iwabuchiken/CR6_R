@@ -563,4 +563,8 @@ g p origin master && g p heroku master
 [20131008_103802]-------------------------------------
 bundle exec rake assets:precompile
 
+[20131011_205503]-------------------------------------
+rails generate scaffold Settings boolean:mobile_view
+
+
 ============EOF============
