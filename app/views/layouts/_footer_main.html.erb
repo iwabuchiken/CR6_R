@@ -27,3 +27,14 @@
 <% end %>
 
 <hr />
+
+<%= link_to_unless_current 'Local site',
+				"http://localhost:3001/texts",
+				:target => "_blank" %>&nbsp;|&nbsp;
+
+<%= link_to_unless_current 'Heroku site',
+				"http://cosmos-cr6.herokuapp.com/admin/main?class=link",
+				:target => "_blank" %>
+
+
+<hr />

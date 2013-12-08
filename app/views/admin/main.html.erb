@@ -1,27 +1,12 @@
 <p id="notice"><%= notice %></p>
 
 <h1>
-	<a name="top">Admin#main</a>
+	<a name="top">Admin page</a>
 </h1>
-
-<div>
-	<!-- http://www.iconsdb.com/royal-blue-icons/linux-icon.html -->
-	<img src="/images/linux-64.jpg" />
-</div>
-
-<a href="#bottom" style="margin: 0px 25px;">(To bottom)</a>
 
 <%= render :partial => "admin_main_contents" %>
 
-
 <hr />
-
-@contentArray = <%= @contentArray.class %><br />
-@contentArray.length = <%= @contentArray.length %><br />
-<hr />
-
-	<%= render :partial => "main_menu" %>
-
 <!-- <div id="admin_show_log">Show log</div><br /> -->
 <input type="button" value="Show log"   id="show_button" /> |
 <!--
@@ -29,31 +14,9 @@
 -->
 <input type="button" value="Hide log"   class="hide_button" disabled/>
 
-<p>CLICK here</p>
-
-<hr />
-
-<div id="div1">
-	Ajax area
-</div>
-<button id="bt1">
-	Ajax experience
-</button>
-
-<hr />
-
-<!-- http://d.hatena.ne.jp/yuum3/20120903/1346653974 -->
-<%#= link_to 'Show', :controller => 'admin', :action => 'sub2', {:remote => true} %>
-<%#= link_to 'Admin/sub2', :controller => 'admin', :action => 'sub2'%> <!-- /admin/sub2 -->
-<%#= link_to 'Admin/sub2', :controller => 'admin', :action => 'sub2', {:remote => true}%> <!-- syntax error, unexpected ')' -->
-
-<!-- http://stackoverflow.com/questions/6721259/ruby-on-rails-3-link-to-remote-true-treats-remote-as-a-url-parameter answered Jul 17 '11 at 1:01 -->
-<%= link_to 'Admin/sub2', {:controller => 'admin', :action => 'sub2'}, :remote => true %>
-<div id="ajaxtest">Ajax test</div>
 <hr />
 
 
-<!-- <div id="logs"> -->
 	
 <!-- REF display http://stackoverflow.com/questions/4474327/how-to-make-a-div-hidden-by-default-made-by-a-content-tag-for -->
 <div id="logs" style="display: none;">
@@ -78,7 +41,3 @@
 	<input type="button" value="Hide log"   class="hide_button" disabled/>
 	
 </div>
-
-<hr />
-<a href="#top" style="margin: 0px 25px;">(To top)</a>
-<a name="bottom"></a>

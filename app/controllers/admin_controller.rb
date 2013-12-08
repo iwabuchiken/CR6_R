@@ -333,4 +333,11 @@ class AdminController < ApplicationController
           format.json { render json: @text }
       end
   end
+
+    def backup_db
+        
+        render :text => "backup"
+        
+    end
+
 end
