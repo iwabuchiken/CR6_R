@@ -1,12 +1,16 @@
+# Git + server
+a p && pushd C:\WORKS\WS\WS_Android\CR6(R) && gitk && rails s --port 3001
+
+# Git
+a p && pushd C:\WORKS\WS\WS_Android\CR6(R) && gitk
 a
 pushd C:\WORKS\WS\WS_Android\CR6(R) && gitk
 
-a p && pushd C:\WORKS\WS\WS_Android\CR6(R) && gitk
-
+# Pushd
 pushd C:\WORKS\WS\WS_Android\CR6(R)
+
 gitk
 
-a p && pushd C:\WORKS\WS\WS_Android\CR6(R) && rails s --port 3001
 
 pushd C:\WORKS\WS\WS_Android\CR6(R)
 rails s --port 3001
@@ -570,6 +574,8 @@ rails destroy scaffold Settings
 
 rails generate scaffold Settings mobile_view:boolean
 
-bundle exec rake db:migrate
+#bundle exec rake db:migrate
+
+#heroku run rake db:migrate
 
 ============EOF============
