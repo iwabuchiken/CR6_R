@@ -1,4 +1,6 @@
 require_dependency 'basic'
+
+# Without this line below, heroku site => "uninitialized"
 require_dependency 'const'
 include Basic
 include Const

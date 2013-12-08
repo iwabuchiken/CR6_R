@@ -1,7 +1,7 @@
 # require 'fileutils'
 
 # @max_line_num = 3000
-
+require_dependency 'const'
 include Const
 
 def get_time_label_now()
