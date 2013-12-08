@@ -1,1 +1,7 @@
 <%= @message %>
+
+<hr />
+<%= link_to "Build CSV",
+		:controller => "admin",
+		:action => "backup_db",
+		:dl => "build_csv"%>

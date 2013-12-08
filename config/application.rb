@@ -55,5 +55,13 @@ module CR6R
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+    
+    #========================================
+    # => Global variables
+    #========================================
+    # BACKUP_PATH = "doc/backup/"
+    
+    
+    
   end
 end

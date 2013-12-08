@@ -1,9 +1,10 @@
 require_dependency 'basic'
 include Basic
+include Const
 
 class AdminController < ApplicationController
   
-  # layout "layout_admin"
+  layout "layout_admin"
   
   def main
     
@@ -336,7 +337,23 @@ class AdminController < ApplicationController
 
     def backup_db
         
-        render :text => "backup"
+        param = params['dl']
+        
+        # Routing
+        if param == "word"
+            
+            @message = "word"
+            
+        else
+            
+            @message = "Welcome"
+            
+            # msg = Const::BACKUP_PATH
+            
+        end
+        
+        # render :text => Const::BACKUP_PATH
+        # render :text => "doc/backup/"
         
     end
 

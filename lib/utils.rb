@@ -1,6 +1,8 @@
-require 'fileutils'
+# require 'fileutils'
 
 # @max_line_num = 3000
+
+include Const
 
 def get_time_label_now()
   
@@ -109,3 +111,9 @@ def write_log(text, file, line)
     f.close
   
 end#def write_log()
+
+def _backup_path
+        
+    return BACKUP_PATH
+        
+end

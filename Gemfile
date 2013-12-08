@@ -10,6 +10,9 @@ gem 'rails', '3.2.1'
 group :development do
   # gem 'sqlite3', '1.3.5'
   gem 'sqlite3', '1.3.7'
+  
+  gem 'require_reloader'
+  
 end
 
 # Gems used only for assets and not required

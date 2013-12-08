@@ -3,6 +3,10 @@ a p && pushd C:\WORKS\WS\WS_Android\CR6(R) && gitk && rails s --port 3001
 
 # Git
 a p && pushd C:\WORKS\WS\WS_Android\CR6(R) && gitk
+
+# Server/ No git
+a p && pushd C:\WORKS\WS\WS_Android\CR6(R) && rails s --port 3001
+
 a
 pushd C:\WORKS\WS\WS_Android\CR6(R) && gitk
 
@@ -577,5 +581,11 @@ rails generate scaffold Settings mobile_view:boolean
 #bundle exec rake db:migrate
 
 #heroku run rake db:migrate
+
+[20131011_205503]-------------------------------------
+rails generate scaffold SettingsNR4 sort_genre:integer sort_category:integer
+bundle exec rake db:migrate
+
+
 
 ============EOF============

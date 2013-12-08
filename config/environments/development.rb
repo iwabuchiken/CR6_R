@@ -34,4 +34,9 @@ CR6R::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+  
+    #REF https://github.com/teohm/require_reloader
+    RequireReloader.watch :utils  
+    RequireReloader.watch :const  
+  
 end
