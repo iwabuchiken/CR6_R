@@ -1,4 +1,5 @@
 require_dependency 'basic'
+require_dependency 'const'
 include Basic
 include Const
 
