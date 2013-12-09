@@ -1,3 +1,4 @@
+require "csv"
 # require 'fileutils'
 
 # @max_line_num = 3000
@@ -215,7 +216,8 @@ end#write_log2(dpath, text, file, line)
 
 def _backup_path
         
-    return BACKUP_PATH
+    return Const::BACKUP_PATH
+    # return BACKUP_PATH
         
 end
 
@@ -237,6 +239,7 @@ def _backup_db__execute(model_names)
         
     else
         
+        # msg += "Dir exists!!: #{backup_path}"
         msg += "Dir exists: #{backup_path}<br/>"
         
     end
@@ -244,13 +247,20 @@ def _backup_db__execute(model_names)
     # Get models
     models = get_models
     
-    write_log2(
-          Const::LOG_PATH,
-          models,
-          # __FILE__,
-          __FILE__.split("/")[-1],
-          __LINE__.to_s)
-
+    # Build csv
+    models = [Lang, Word]
+    
+    class_and_columns = _backup_db__get_columns(models)
+    
+    counter = _backup_db__create_backup_files(class_and_columns)
+    
+    msg += "#{counter} model(s) done<br/>"
+    
+    # write_log2(
+            # Const::LOG_PATH,
+            # class_and_columns,
+            # __FILE__,
+            # __LINE__)
     
     now = Time.now
     
@@ -262,7 +272,8 @@ end#_backup_db__execute
 
 def get_models()
     
-    tmp = Dir.glob("app/models/*.rb")
+    tmp = Dir.glob(File.join(Const::MODELS_PATH, "*.rb"))
+    #tmp = Dir.glob("app/models/*.rb")
     
     models = []
         
@@ -277,3 +288,81 @@ def get_models()
     return models
     
 end#get_models()
+
+    def _backup_db__get_columns(class_names)
+        
+        res = {}
+        
+        class_names.each_with_index do |x, i|
+            
+            columns = class_names[i].columns.map{|c| c.name}
+            
+            res[class_names[i]] = columns
+        
+        end
+        
+        return res
+        
+    end#_backup_db__get_columns
+
+    ################################################
+    # => _backup_db__create_backup_files(class_and_columns)
+    # => @param
+    # =>    class_and_columns
+    # =>        {Keyword => ["id", "name", ...], Genre => ...}
+    # => @return
+    # =>    void
+    ################################################
+    def _backup_db__create_backup_files(class_and_columns)
+        
+        models = class_and_columns.keys
+        
+        counter = 0
+        
+        models.each do |m|
+            
+            columns = class_and_columns[m]
+        
+            #REF table_name http://stackoverflow.com/questions/6139640/how-to-determine-table-name-within-a-rails-3-model-class answered May 26 '11 at 14:12
+            table_info = [m.to_s, m.table_name]
+
+            t = Time.now
+            
+            # fpath = "tmp/backup/backup_#{models[0].to_s}.csv"
+            fpath = File.join(
+                        _backup_path,
+                        "#{m.table_name.singularize.capitalize}_backup.csv")
+            
+            CSV.open(fpath, 'w') do |w|
+                
+                w << table_info
+                w << [t]
+                # w << t
+                w << columns
+                
+                # data
+                entries = m.all
+                
+                entries.each do |e|
+                    
+                    data = []
+                    
+                    columns.each do |c|
+                        
+                        data.push(e[c])
+                        
+                    end#columns.each do |c|
+                    
+                    w << data
+                    
+                end#entries.each do |e|
+                
+            end#CSV.open(fpath, 'w') do |w|
+            
+            counter += 1
+            
+        end#models.each do |m|
+        
+        return counter
+        
+    end#_create_backup_files(class_and_columns)

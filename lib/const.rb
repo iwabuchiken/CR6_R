@@ -1,8 +1,8 @@
 module Const
     
-    BACKUP_PATH = "doc/backup/"
+    BACKUP_PATH = "doc/backup"
     
-    MODELS_PATH = "doc/backup/"
+    MODELS_PATH = "app/models"
     
     LOG_PATH    = "doc/mylog"
     
