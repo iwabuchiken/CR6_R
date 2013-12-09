@@ -11,7 +11,7 @@ a
 pushd C:\WORKS\WS\WS_Android\CR6(R) && gitk
 
 # Pushd
-pushd C:\WORKS\WS\WS_Android\CR6(R)
+a p && pushd C:\WORKS\WS\WS_Android\CR6(R)
 
 gitk
 

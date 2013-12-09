@@ -1,7 +1,6 @@
 # require 'fileutils'
 
 # @max_line_num = 3000
-
 # This line is needed; otherwise => C:/WORKS/WS/WS_Android/CR6(R)/lib/utils.rb:5:in `<top (required)>': uninitialized constant Const (NameError)
 require_dependency 'const'
 include Const
