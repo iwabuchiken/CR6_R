@@ -209,3 +209,9 @@ File size=8193------------------------=[end]
 File size=8398
 ------------------------=[end]
 
+[begin]------------------------=
+[2013/12/09 22:24:01] [utils.rb: 252]
+[Lang(id: integer, name: string, created_at_mill: integer, updated_at_mill: integer, created_at: datetime, updated_at: datetime), Link(id: integer, title: string, url: string, memo: text, created_at_mill: integer, updated_at_mill: integer, created_at: datetime, updated_at: datetime), Member(id: integer, name: string, passwd: string, created_at: datetime, updated_at: datetime), Setting(id: integer, mobile_view: boolean, created_at: datetime, updated_at: datetime), Text(id: integer, text: text, title: string, word_ids: string, url: string, genre_id: integer, subgenre_id: integer, lang_id: integer, memo: text, dbId: integer, created_at_mill: integer, updated_at_mill: integer, created_at: datetime, updated_at: datetime), Word(id: integer, w1: string, w2: string, w3: string, text_ids: string, text_id: integer, lang_id: integer, dbId: integer, created_at_mill: integer, updated_at_mill: integer, created_at: datetime, updated_at: datetime), WordList(id: integer, text_id: integer, word_id: integer, lang_id: integer, db_id: integer, created_at_mill: integer, updated_at_mill: integer, created_at: datetime, updated_at: datetime)]
+File size=9658
+------------------------=[end]
+

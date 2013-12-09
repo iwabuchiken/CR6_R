@@ -24,12 +24,6 @@ class TextsController < ApplicationController
       # lang_id  ======================================
       lang_id = _index_param_lang_id()
       
-      msg = "(" + __FILE__ + ":" + __LINE__.to_s + ") " + 
-                "lang_id.to_s=" + lang_id.to_s
-        
-      logout(msg)
-
-      
       # Sort ======================================
       #debug
       # default_sort_key = :title
@@ -38,11 +32,6 @@ class TextsController < ApplicationController
       
       default_sort_key = _index_param_sort(param_sort)
       
-      msg = "(" + __FILE__ + ":" + __LINE__.to_s + ") " + 
-                "default_sort_key.to_s=" + default_sort_key.to_s
-        
-      logout(msg)
-  
       # Since ======================================
       since = params[:since]
       
@@ -91,7 +80,6 @@ class TextsController < ApplicationController
     
       if since == nil
 
-        logout("since == nil")
         # texts = Text.all
         if lang_id == -1
               texts = Text.paginate(
@@ -151,26 +139,11 @@ class TextsController < ApplicationController
                                   
                         # :conditions => ["created_at > ?", Time.at(since.to_i / 1000)])
               
-              # logout(Time.at(since.to_i / 1000) + "/utc=" + Time.at(since.to_i / 1000).utc)
-              # logout(Time.at(since.to_i / 1000).to_s + "/utc=" + Time.at(since.to_i / 1000).utc.to_s)
-              logout((Time.at(since.to_i / 1000) + (9*60*60 + 1)).to_s\
-                      + "/utc="\
-                      + (Time.at(since.to_i / 1000).utc + (9*60*60 + 1)).to_s\
-                      + "/since=" + since.to_i.to_s
-                      )
-              
-              # logout((Time.at(since.to_i / 1000) + (9*60*60)).to_s\
-                      # + "/utc="\
-                      # + (Time.at(since.to_i / 1000).utc + (9*60*60)).to_s)
-              
               # @texts.paginate
               
               return texts
             
           else
-              logout("since -> " + since)
-              
-              # logout("since -> " + since + "(" + Time.at(since.to_i / 1000) + ")")
               
               texts =
                   Text.all
@@ -189,7 +162,6 @@ class TextsController < ApplicationController
     
       if since == nil
 
-        logout("since == nil")
         # texts = Text.all
         # texts = Text.pagenate(
         texts = Text.paginate(
@@ -241,13 +213,8 @@ class TextsController < ApplicationController
               
               # logout(Time.at(since.to_i / 1000) + "/utc=" + Time.at(since.to_i / 1000).utc)
               # logout(Time.at(since.to_i / 1000).to_s + "/utc=" + Time.at(since.to_i / 1000).utc.to_s)
-              logout((Time.at(since.to_i / 1000) + (9*60*60 + 1)).to_s\
-                      + "/utc="\
-                      + (Time.at(since.to_i / 1000).utc + (9*60*60 + 1)).to_s\
-                      + "/since=" + since.to_i.to_s
-                      )
               
-              # logout((Time.at(since.to_i / 1000) + (9*60*60)).to_s\
+              # ((Time.at(since.to_i / 1000) + (9*60*60)).to_s\
                       # + "/utc="\
                       # + (Time.at(since.to_i / 1000).utc + (9*60*60)).to_s)
               
@@ -256,10 +223,7 @@ class TextsController < ApplicationController
               return texts
             
           else
-              logout("since -> " + since)
-              
-              # logout("since -> " + since + "(" + Time.at(since.to_i / 1000) + ")")
-              
+            
               texts =
                   Text.all
               
@@ -277,12 +241,6 @@ class TextsController < ApplicationController
       if param_sort != nil and param_sort == "lang"
       # if param_sort != nil
         
-        # msg = "(" + __FILE__ + ":" + __LINE__.to_s + ") " + 
-            # "param_sort=" + param_sort +
-            # "/" + "param_sort.to_sym.class.to_s=" + param_sort.to_sym.class.to_s
-  #   
-        # logout(msg)
-  
         # => REF to_sym http://chulip.org/entry/20090627/1246117665
         # default_sort_key = param_sort.to_sym
         # default_sort_key = :lang_id
@@ -315,58 +273,14 @@ class TextsController < ApplicationController
     
     if params[:text] == nil
 
-        msg = "(" + __FILE__ + ":" + __LINE__.to_s + ") " + 
-              "params[:text] => nil"
-      
-        logout(msg)
-      
         return -1
     
     elsif params[:text] != nil && params[:text] == ""
 
-        msg = "(" + __FILE__ + ":" + __LINE__.to_s + ") " + 
-              "params[:text] => \"\""
-      
-        logout(msg)
-      
         return -1
       
     else
       
-      msg = "(" + __FILE__ + ":" + __LINE__.to_s + ") " + 
-            "params[:text] => " + params[:text].class.to_s +
-            "/" + "params[:text][:lang_id].class=" + params[:text][:lang_id].class.to_s
-    
-      logout(msg)
-      
-      if params[:text][:lang_id] != nil &&
-            params[:text][:lang_id] != ""
-        
-          msg = "(" + __FILE__ + ":" + __LINE__.to_s + ") " + 
-                "params[:text] => " + params[:text].class.to_s +
-                "/" + "params[:text][:lang_id]=" + params[:text][:lang_id]
-        
-          logout(msg)
-        
-      elsif params[:text][:lang_id] != nil &&
-            params[:text][:lang_id] == ""
-        
-          msg = "(" + __FILE__ + ":" + __LINE__.to_s + ") " + 
-                "params[:text] => " + params[:text].class.to_s +
-                "/" + "params[:text][:lang_id] => \"\""
-        
-          logout(msg)
-        
-      else
-
-          msg = "(" + __FILE__ + ":" + __LINE__.to_s + ") " + 
-                "params[:text] => " + params[:text].class.to_s +
-                "/" + "params[:text][:lang_id] => nil"
-        
-          logout(msg)
-        
-      end
-        
       lang_id = params[:text][:lang_id]
       
     end
@@ -429,7 +343,6 @@ class TextsController < ApplicationController
     # #debug  => http://stackoverflow.com/questions/3479551/how-to-get-an-array-with-column-names-of-a-table
     # Text.columns.map {|c|
       # c.name
-      # logout("c.name=" + c.name)
     # }
     
     
@@ -480,8 +393,6 @@ class TextsController < ApplicationController
 
       end#if @text.word_list != nil
         
-      logout(msg)
-      
       #params[:text]
       msg = ""
       
@@ -500,13 +411,6 @@ class TextsController < ApplicationController
         
       end
       
-      # msg = "(" + __FILE__ + ":" + __LINE__.to_s + ") " + 
-        
-
-      logout(msg)
-      
-
-    
     respond_to do |format|
       if @text.update_attributes(params[:text])
         format.html { redirect_to @text, notice: 'Text was successfully updated.' }
@@ -546,22 +450,8 @@ class TextsController < ApplicationController
     
     if selected_words.length > 0
     
-      msg = "(" + __FILE__ + ":" + __LINE__.to_s + ") " + 
-          "selected_words.length=" + selected_words.length.to_s
-  
-      logout(msg)
-  
-      msg = "(" + __FILE__ + ":" + __LINE__.to_s + ") " + 
-          "selected_words[0].w1=" + selected_words[0].w1
-  
-      logout(msg)
-      
     else
       
-      msg = "(" + __FILE__ + ":" + __LINE__.to_s + ") " + 
-          "selected_words.length =< 0"
-  
-      logout(msg)
     end
     
     #=======================================
@@ -578,20 +468,9 @@ class TextsController < ApplicationController
         word_ids << word.id
       }
       
-      msg = "(" + __FILE__ + ":" + __LINE__.to_s + ") " + 
-            "word_ids.length.to_s=" + word_ids.length.to_s
-
-      logout(msg)
-      
       res = _build_word_list__3_register_words(text_id, word_ids, @text.lang_id)
       
     else
-      
-      msg = "(" + __FILE__ + ":" + __LINE__.to_s + ") " + 
-      "selected_words.length > 0="
-
-      logout(msg)
-
       
     end#if selected_words.length > 0
     
@@ -628,10 +507,6 @@ class TextsController < ApplicationController
     
     # => REF subtract http://favstar.fm/users/hassyX/status/11376406955
     diff_words = all_words - this_words
-    
-    msg = "(" + __FILE__ + ":" + __LINE__.to_s + ") " + 
-              "diff_words.length=" + diff_words.length.to_s
-    logout(msg)
     
     return diff_words
     
@@ -703,19 +578,7 @@ class TextsController < ApplicationController
         
         if word_list.save
           
-          msg = "(" + __FILE__ + ":" + __LINE__.to_s + ") " + 
-              "word_list saved: text=" + text_id.to_s +
-              "/" + "word=" + word_ids[i].to_s
-  
-          logout(msg)
-          
         else
-  
-          msg = "(" + __FILE__ + ":" + __LINE__.to_s + ") " + 
-              "word_list couldn't be saved: text=" + text_id.to_s +
-              "/" + "word=" + word_ids[i].to_s
-  
-          logout(msg)
   
         end#if word_list.save
     
@@ -732,11 +595,6 @@ class TextsController < ApplicationController
     
     if text == nil
       
-      msg = "(" + __FILE__ + ":" + __LINE__.to_s + ") " + 
-            "text => nil"
-      
-      logout(msg)
-
       return text
       
     end
@@ -748,19 +606,6 @@ class TextsController < ApplicationController
     words = text.words
     
     # words = Word.find_by_text_id(text_id)
-    
-    if words != nil
-    
-      msg = "text.id=" + text_id.to_s + "/" + "Num of words=" + words.length.to_s
-      # msg = "text.id=" + text_id.to_s + "/" + "Num of words=" + words.count
-      
-    else
-      
-      msg = "text.id=" + text_id.to_s + "/" + "words => nil"
-      
-    end
-    
-    logout(msg)
     
     ##########################
     #
@@ -816,9 +661,7 @@ class TextsController < ApplicationController
     # => REF =~ http://www.rubylife.jp/regexp/ini/index4.html
     while r =~ text[marker..(text.size - 1)] do
     # while r =~ text[marker..(text.size - 1)] && counter < maxnum do
-      #debug
-      logout("r=" + r.source)
-      
+    
       point = (r =~ text[marker..(text.size - 1)])
       
       text.insert(marker + point, t1)
@@ -855,20 +698,9 @@ class TextsController < ApplicationController
           
           if  point
           # if r =~ text_split[i]
-              #debug
-              msg = "(" + __FILE__ + ":" + __LINE__.to_s + ") " + 
-                "text_split[i]=" + text_split[i] +
-                "/" + "point=" + point.to_s
-        
-              logout(msg)
               
               text_split[i].insert(point, t1)
               
-              #debug
-              msg = "(" + __FILE__ + ":" + __LINE__.to_s + ") " + 
-                "text_split[i]=" + text_split[i]
-        
-              logout(msg)
               
               text_split[i].insert(point + t1.size + r.source.size, t2)
               
@@ -918,8 +750,6 @@ class TextsController < ApplicationController
     # => REF =~ http://www.rubylife.jp/regexp/ini/index4.html
     while r =~ text[marker..(text.size - 1)] do
     # while r =~ text[marker..(text.size - 1)] && counter < maxnum do
-      #debug
-      logout("r=" + r.source)
       
       point = (r =~ text[marker..(text.size - 1)])
       
@@ -949,8 +779,6 @@ class TextsController < ApplicationController
     # => REF =~ http://www.rubylife.jp/regexp/ini/index4.html
     while r =~ text[marker..(text.size - 1)] do
     # while r =~ text[marker..(text.size - 1)] && counter < maxnum do
-      #debug
-      logout("r=" + r.source)
       
       point = (r =~ text[marker..(text.size - 1)])
       
