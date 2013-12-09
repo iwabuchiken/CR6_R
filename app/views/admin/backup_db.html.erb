@@ -1,7 +1,13 @@
 <%= @message %>
 
 <hr />
+
 <%= link_to "Build CSV",
 		:controller => "admin",
 		:action => "backup_db",
 		:dl => "build_csv"%>
+		
+<%= link_to "Words",
+		:controller => "admin",
+		:action => "backup_db",
+		:dl => "words"%>

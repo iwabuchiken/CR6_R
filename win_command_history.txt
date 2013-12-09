@@ -586,6 +586,8 @@ rails generate scaffold Settings mobile_view:boolean
 rails generate scaffold SettingsNR4 sort_genre:integer sort_category:integer
 bundle exec rake db:migrate
 
+bundle exec rake assets:clean
+bundle exec rake assets:precompile
 
 
 ============EOF============

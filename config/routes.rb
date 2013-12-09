@@ -19,6 +19,8 @@ CR6R::Application.routes.draw do
   resources :langs
 
   # admin
+  get "admin/show_log"
+  
   get "admin/backup_db"
   
   get "admin/main"

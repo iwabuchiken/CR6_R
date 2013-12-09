@@ -1,4 +1,6 @@
 require_dependency 'basic'
+
+# Without this line below, heroku site => "uninitialized"
 require_dependency 'const'
 include Basic
 include Const
@@ -336,14 +338,26 @@ class AdminController < ApplicationController
       end
   end
 
+    #====================================
+    # => backup_db
+    # => @methods: utils.rb
+    # =>    _backup_db__execute
+    # =>    
+    #====================================
     def backup_db
         
         param = params['dl']
         
         # Routing
-        if param == "word"
+        if param == "words"
             
-            @message = "word"
+            @message = "words"
+            
+        elsif param == "build_csv"
+            
+            
+            
+            @message = _backup_db__execute(get_models)
             
         else
             
@@ -357,5 +371,29 @@ class AdminController < ApplicationController
         # render :text => "doc/backup/"
         
     end
+
+    def show_log
+        
+        #target = "doc/mylog/articles/log.log"
+        target = File.join(Const::LOG_PATH, Const::LOG_FILE_NAME)
+        
+        @content = ""
+        
+        if File.exists?(target)
+          
+          contentArray = File.readlines(target).reverse!
+    
+        else
+          
+          contentArray = ['No log data']
+          
+        end
+        
+        respond_to do |format|
+          format.html { render :text => contentArray.join('<br/>') }
+          # format.json { head :no_content }
+        end        
+    end#show_log
+
 
 end
