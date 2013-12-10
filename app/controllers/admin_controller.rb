@@ -351,11 +351,11 @@ class AdminController < ApplicationController
         # Routing
         if param == "words"
             
-            @message = "words"
+            f = File.join(_backup_path, "Word_backup.csv")
+                
+            _download_file(f)
             
         elsif param == "build_csv"
-            
-            
             
             @message = _backup_db__execute(get_models)
             

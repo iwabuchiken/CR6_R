@@ -366,3 +366,16 @@ end#get_models()
         return counter
         
     end#_create_backup_files(class_and_columns)
+    
+    def _download_file(fullpath)
+        
+        #REF http://qiita.com/akkun_choi/items/64080a8e17930879b4da
+        
+        stat = File::stat(fullpath)
+        
+        send_file(fullpath,
+            :filename => File.basename(fullpath),
+            :length => stat.size)
+        
+    end
+
