@@ -1,4 +1,9 @@
 require "csv"
+
+require "uri"
+require "net/http"
+
+
 # require 'fileutils'
 
 # @max_line_num = 3000
@@ -366,3 +371,143 @@ end#get_models()
         return counter
         
     end#_create_backup_files(class_and_columns)
+    
+    def _download_file(fullpath)
+        
+        #REF http://qiita.com/akkun_choi/items/64080a8e17930879b4da
+        
+        stat = File::stat(fullpath)
+        
+        send_file(fullpath,
+            :filename => File.basename(fullpath),
+            :length => stat.size)
+        
+    end
+
+def _post_data(remote_url, model)
+    
+    # model_name = model.table_name.singularize.capitalize
+    model_name = model.class.to_s
+    
+    attrs = _get_attrs(model_name)
+#     
+    values = _get_values(model)
+    # # values = _get_values(model_name)
+#     
+    parameters = _backup_db__build_params(model_name, attrs, values)
+=begin
+    write_log2(
+                  LOG_PATH,
+                  "parameters => #{parameters}",
+                  # "model_name => #{model_name}/attrs => #{attrs}/values => #{values}",
+                  # parameters,
+                  # __FILE__,
+                  __FILE__.split("/")[-1],
+                  __LINE__.to_s)    
+=end  
+
+# =begin
+    #debug
+    write_log2(
+                  LOG_PATH,
+                  "Posting data => Starts",
+                  # __FILE__,
+                  __FILE__.split("/")[-1],
+                  __LINE__.to_s)
+
+    x = Net::HTTP.post_form(
+            URI.parse(URI.encode(remote_url)),
+            parameters)
+#    x = Net::HTTP.post_form(
+#            URI.parse(remote_url),
+#            parameters)
+    
+
+    #debug
+    write_log2(
+                  LOG_PATH,
+                  "Posting data => Done: result=#{x.message}",
+                  # __FILE__,
+                  __FILE__.split("/")[-1],
+                  __LINE__.to_s)
+
+# =end
+
+    # return "Done"
+    return "Done (result => #{x})"
+    
+end#_post_data(remote_url, model)
+
+def _get_values(model)
+    
+    values = []
+    
+    # m = model_name.constantize
+    
+    if model.class.to_s == "Word"
+    #if model == "Word"
+        
+        values.push(model.w1)
+        values.push(model.w2)
+        values.push(model.w3)
+        
+    else
+        
+        return nil
+        
+    end
+    
+end#def _get_values(model_name)
+
+def _get_attrs(model_name)
+    
+    attrs = []
+    
+    if model_name == "Word"
+        
+        attrs.push("w1")
+        attrs.push("w2")
+        attrs.push("w3")
+        
+    else
+        
+        return nil
+        
+    end
+    
+end
+
+def _get_backup_url
+    
+    return BACKUP_URL
+    
+end
+
+=begin
+    _backup_db__build_params(data)
+    
+    data => {'model_name' => ..., 'attrs' => ...,}
+=end
+def _backup_db__build_params(model_name, attrs, values)
+    # Name
+    params = {}
+    
+    # attrs = [
+                # "name", "genre_id", "category_id",
+                # "remote_id", "created_at", "updated_at"]
+#     
+    # values = [
+                # kw.name, kw.genre_id, kw.category_id,
+                # kw.id, kw.created_at, kw.updated_at]
+    
+    attrs.size.times do |i|
+        
+        #REF add element http://www.rubylife.jp/ini/hash/index5.html
+        params["data[#{model_name}][#{attrs[i]}]"] = values[i]
+        # params["data[Keyword][#{attrs[i]}]"] = values[i]
+    
+    end
+
+    return params
+    
+end#_backup_db__build_params

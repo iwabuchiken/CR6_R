@@ -29,6 +29,10 @@ g a . && gitk
 git log --grep=master -6
 g log --grep="\bm\b"
 
+# Git push
+g p origin master && g p heroku master && heroku run rake db:migrate
+g p origin master && g p heroku master
+
 
 [Set up 2013/04/20 14:45:46]----------------------------
 #bundle install
