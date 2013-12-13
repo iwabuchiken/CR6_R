@@ -8,4 +8,6 @@ module Const
     
     LOG_FILE_NAME = "log.log"
     
+    BACKUP_URL    = "http://benfranklin.chips.jp/rails_apps/nr4/cakephp-2.3.10/words/add"
+    
 end

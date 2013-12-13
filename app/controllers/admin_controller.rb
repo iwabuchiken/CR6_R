@@ -366,7 +366,41 @@ class AdminController < ApplicationController
             # msg = Const::BACKUP_PATH
             
         end
+
+        #debug
+        model = Word.first
+=begin
+        write_log2(
+                  LOG_PATH,
+                  "model => #{model.class.to_s}",
+                  # "t.t.name.to_s=#{t.name.to_s}",
+                  #"t.name=#{t.name}",
+                  # __FILE__,
+                  __FILE__.split("/")[-1],
+                  __LINE__.to_s)        
+=end
+        _post_data(BACKUP_URL, model)
         
+
+=begin
+        #debug
+        t = "Lang".constantize.first
+        
+        model_name = Lang.table_name.singularize.capitalize
+        
+        # n = "name".constantize
+        
+        #debug
+        write_log2(
+                  LOG_PATH,
+                  "model_name=#{model_name}",
+                  # "t.t.name.to_s=#{t.name.to_s}",
+                  #"t.name=#{t.name}",
+                  # __FILE__,
+                  __FILE__.split("/")[-1],
+                  __LINE__.to_s)
+=end
+
         # render :text => Const::BACKUP_PATH
         # render :text => "doc/backup/"
         
