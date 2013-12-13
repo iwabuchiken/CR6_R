@@ -450,6 +450,18 @@ def _get_values(model)
         values.push(model.w1)
         values.push(model.w2)
         values.push(model.w3)
+
+        values.push(model.text_ids)
+        values.push(model.text_id)
+        values.push(model.lang_id)
+        
+        values.push(model.id) # => "dbId"
+        values.push(model.id) # => "remote_id"
+        
+        values.push(model.created_at.to_s)
+        # values.push(model.created_at_mill)
+        values.push(model.updated_at.to_s)
+        # values.push(model.updated_at_mill)
         
     else
         
@@ -468,6 +480,16 @@ def _get_attrs(model_name)
         attrs.push("w1")
         attrs.push("w2")
         attrs.push("w3")
+        
+        attrs.push("text_ids")
+        attrs.push("text_id")
+        attrs.push("lang_id")
+        
+        attrs.push("dbId")
+        attrs.push("remote_id")
+        
+        attrs.push("created_at_mill")
+        attrs.push("updated_at_mill")
         
     else
         

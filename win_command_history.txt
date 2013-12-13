@@ -33,6 +33,8 @@ g log --grep="\bm\b"
 g p origin master && g p heroku master && heroku run rake db:migrate
 g p origin master && g p heroku master
 
+[heroku]
+heroku run console
 
 [Set up 2013/04/20 14:45:46]----------------------------
 #bundle install
