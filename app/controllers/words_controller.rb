@@ -408,13 +408,9 @@ class WordsController < ApplicationController
     
       text = Text.find(text_id.to_i)
       
-      logout("text_id => " + text_id.to_s)
-      
     else
 
       text = nil
-      
-      logout("text_id => nil")
       
     end
     
@@ -424,12 +420,22 @@ class WordsController < ApplicationController
           
           text.words << @word
           
-          logout("word added to the text: id=" + @word.id.to_s)
-          
+          write_log2(
+                  LOG_PATH,
+                  "word added to the text: word id => " + @word.id.to_s,
+                  __FILE__.split("/")[-1],
+                  __LINE__.to_s)        
+                  
+            _post_data(BACKUP_URL, @word)
+            
         else
           
-          logout("text == nil")
-          
+            write_log2(
+                  LOG_PATH,
+                  "text == nil(for the word #{@word.w1})",
+                  __FILE__.split("/")[-1],
+                  __LINE__.to_s)        
+                  
         end
 
         format.html { redirect_to @word, notice: 'Word was successfully created.' }
