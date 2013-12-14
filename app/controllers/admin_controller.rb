@@ -367,9 +367,9 @@ class AdminController < ApplicationController
             
         end
 
+=begin
         #debug
         model = Word.first
-=begin
         write_log2(
                   LOG_PATH,
                   "model => #{model.class.to_s}",
@@ -378,8 +378,9 @@ class AdminController < ApplicationController
                   # __FILE__,
                   __FILE__.split("/")[-1],
                   __LINE__.to_s)        
-=end
         _post_data(BACKUP_URL, model)
+
+=end
         
 
 =begin

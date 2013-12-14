@@ -34,7 +34,14 @@
 
 <%= link_to_unless_current 'Heroku site',
 				"http://cosmos-cr6.herokuapp.com/admin/main?class=link",
-				:target => "_blank" %>
+				:target => "_blank" %>&nbsp;|&nbsp;
 
+<%= link_to_unless_current 'Cake site',
+				"http://benfranklin.chips.jp/rails_apps/nr4/cakephp-2.3.10/words",
+				:target => "_blank" %>&nbsp;|&nbsp;
+				
+<%= link_to_unless_current 'Database site',
+				"https://mysqladmin.lolipop.jp/pma/index.php?server=104&token=ac861c5805fe5e0b7aaef0896aa7cefb",
+				:target => "_blank" %>
 
 <hr />
