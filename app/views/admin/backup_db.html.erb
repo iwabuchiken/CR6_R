@@ -1,5 +1,17 @@
 <%#= @message %>
-<%= raw(@message) %>
+<% if @message.include? "doesn't exist" %>
+	
+	<font color="red">
+		
+		<%= raw(@message) %>
+		
+	</font>
+	
+<% else %>
+
+	<%= raw(@message) %>
+	
+<% end %>
 
 <hr />
 
@@ -7,8 +19,27 @@
 		:controller => "admin",
 		:action => "backup_db",
 		:dl => "build_csv"%>
-		
-<%= link_to "Words",
+	
+<br />
+
+<% @model_names.each do |name| %>
+
+	<%= link_to name.capitalize,
+			:controller => "admin",
+			:action => "backup_db",
+			:dl => name %> | 
+	
+
+
+<% end %>
+
+<%#= link_to "Words",
 		:controller => "admin",
 		:action => "backup_db",
-		:dl => "words"%>
+		:dl => "word"%>
+		
+<%#= link_to "Langs",
+		:controller => "admin",
+		:action => "backup_db",
+		:dl => "lang"%>
+		

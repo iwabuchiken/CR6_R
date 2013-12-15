@@ -249,11 +249,11 @@ def _backup_db__execute(model_names)
         
     end
     
-    # Get models
+    # # Get models
     models = get_models
     
-    # Build csv
-    models = [Lang, Word]
+    # # Build csv
+    # models = [Lang, Word]
     
     class_and_columns = _backup_db__get_columns(models)
     
@@ -316,7 +316,7 @@ end#get_models()
     # =>    class_and_columns
     # =>        {Keyword => ["id", "name", ...], Genre => ...}
     # => @return
-    # =>    void
+    # =>    counter => Number of files created
     ################################################
     def _backup_db__create_backup_files(class_and_columns)
         
@@ -333,10 +333,14 @@ end#get_models()
 
             t = Time.now
             
+            # fname = m.table_name.singularize.capitalize
+            fname = m.table_name.singularize.gsub(/_/, '').capitalize
+            
             # fpath = "tmp/backup/backup_#{models[0].to_s}.csv"
             fpath = File.join(
                         _backup_path,
-                        "#{m.table_name.singularize.capitalize}_backup.csv")
+                        "#{fname}_backup.csv")
+                        # "#{m.table_name.singularize.capitalize}_backup.csv")
             
             CSV.open(fpath, 'w') do |w|
                 
@@ -373,6 +377,14 @@ end#get_models()
     end#_create_backup_files(class_and_columns)
     
     def _download_file(fullpath)
+        
+        if !File.exists?(fullpath)
+            
+            return "csv file doesn't exist => #{fullpath}"
+            
+        end
+
+      
         
         #REF http://qiita.com/akkun_choi/items/64080a8e17930879b4da
         

@@ -346,14 +346,20 @@ class AdminController < ApplicationController
     #====================================
     def backup_db
         
+        model_names = get_models.collect{|m| m.to_s.downcase}
+        
+        @model_names = model_names
+        
         param = params['dl']
         
         # Routing
-        if param == "words"
+        if model_names.include?(param)
+        # if param == "words"
             
-            f = File.join(_backup_path, "Word_backup.csv")
+            f = File.join(_backup_path, "#{param.capitalize}_backup.csv")
+            #f = File.join(_backup_path, "Word_backup.csv")
                 
-            _download_file(f)
+            @message = _download_file(f)
             
         elsif param == "build_csv"
             
