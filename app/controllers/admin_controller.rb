@@ -353,8 +353,71 @@ class AdminController < ApplicationController
         param = params['dl']
         
         # Routing
-        if model_names.include?(param)
-        # if param == "words"
+        if param
+            if model_names.include?(param)
+                
+                f = File.join(Const::BACKUP_PATH, "#{param.capitalize}_backup.csv")
+                
+                _download_file(f)
+                
+=begin
+            if param == "keyword"
+                
+                f = File.join(_backup_path, "Keyword_backup.csv")
+                
+                _download_file(f)
+                
+            elsif param == "genre"
+                
+                f = File.join(_backup_path, "Genre_backup.csv")
+                
+                _download_file(f)
+                
+                
+            elsif param == "category"
+                
+                f = File.join(_backup_path, "Category_backup.csv")
+                
+                _download_file(f)
+=end
+
+            elsif param == "build_csv"
+                
+                @message = _backup_db__execute
+                
+            elsif param == "zip_file"
+                
+                f = File.join(_backup_path, Const::BACKUP_FNAME_CSV)
+                
+                if File.exists?(f)
+                    
+                    _download_file(f)
+                    
+                else
+                    
+                    @message = "<font color='red'>No csv file</font>"
+                    
+                end
+                
+            else
+                
+                @message = "<font color='red'>Unknown parameter value => #{param}</font>"
+                
+            end#if param == "keyword"
+            
+            return
+            
+            #render :template => "env_nr4s/backup_db" #=> DoubleRenderError
+        
+        else
+            
+            @message = "BACKUP DB"
+            
+        end#if param
+
+        
+=begin
+        if param == "words"
             
             f = File.join(_backup_path, "#{param.capitalize}_backup.csv")
             #f = File.join(_backup_path, "Word_backup.csv")
@@ -372,46 +435,9 @@ class AdminController < ApplicationController
             # msg = Const::BACKUP_PATH
             
         end
-
-=begin
-        #debug
-        model = Word.first
-        write_log2(
-                  LOG_PATH,
-                  "model => #{model.class.to_s}",
-                  # "t.t.name.to_s=#{t.name.to_s}",
-                  #"t.name=#{t.name}",
-                  # __FILE__,
-                  __FILE__.split("/")[-1],
-                  __LINE__.to_s)        
-        _post_data(BACKUP_URL, model)
-
-=end
-        
-
-=begin
-        #debug
-        t = "Lang".constantize.first
-        
-        model_name = Lang.table_name.singularize.capitalize
-        
-        # n = "name".constantize
-        
-        #debug
-        write_log2(
-                  LOG_PATH,
-                  "model_name=#{model_name}",
-                  # "t.t.name.to_s=#{t.name.to_s}",
-                  #"t.name=#{t.name}",
-                  # __FILE__,
-                  __FILE__.split("/")[-1],
-                  __LINE__.to_s)
 =end
 
-        # render :text => Const::BACKUP_PATH
-        # render :text => "doc/backup/"
-        
-    end
+    end#backup_db
 
     def show_log
         

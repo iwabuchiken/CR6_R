@@ -3,6 +3,8 @@ require "csv"
 require "uri"
 require "net/http"
 
+require 'zip/zip'
+require 'zip/zipfilesystem'
 
 # require 'fileutils'
 
@@ -226,14 +228,16 @@ def _backup_path
         
 end
 
-def _backup_db__execute(model_names)
+# def _backup_db__execute(model_names)
+def _backup_db__execute
     
     start = Time.now
     
     msg = ""
     
     # => Dir exists?
-    backup_path = _backup_path
+    #backup_path = _backup_path
+    backup_path = Const::BACKUP_PATH
     
     if !File.exists?(backup_path)
         
@@ -371,6 +375,15 @@ end#get_models()
             counter += 1
             
         end#models.each do |m|
+        
+        #===============================
+        #
+        #   Zip file
+        #
+        #===============================
+        archive = File.join(Const::BACKUP_PATH, Const::BACKUP_FNAME_CSV)
+        
+        build_zip_file(archive)
         
         return counter
         
@@ -545,3 +558,37 @@ def _backup_db__build_params(model_name, attrs, values)
     return params
     
 end#_backup_db__build_params
+
+def build_zip_file(archive)
+    
+    # archive = File.join(Const::BACKUP_PATH, "nr4", Const::BACKUP_FNAME_CSV)
+    # archive = File.join(Const::BACKUP_PATH, "nr4", "csv.zip")
+    
+    Zip::ZipFile.open(archive, 'w') do |zipfile|
+        
+        # Dir["#{path}/**/**"].reject{|f|f==archive}.each do |file|
+        # Dir[File.join(Const::BACKUP_PATH, "nr4") + "/*"].reject{|f|f==archive}.each do |file|
+        Dir[Const::BACKUP_PATH + "/*"].reject{|f|f==archive}.each do |file|
+          # zipfile.add(file.sub(path+'/',''),file)
+            begin
+                
+                zipfile.add(File.basename(file),file)
+                #zipfile.add("csv_files",file)
+            
+            rescue => e
+                
+                write_log(
+                      @log_path,
+                      e.to_s,
+                      # __FILE__,
+                      __FILE__.split("/")[-1],
+                      __LINE__.to_s)
+
+                
+            end
+        end#Dir[File.join(Const::BACKUP_PATH, "nr4") + "/*"]
+        
+    end#Zip::ZipFile.open(archive, 'w') do |zipfile|
+
+    
+end

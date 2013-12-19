@@ -1,9 +1,6 @@
 # Git + server
 a p && pushd C:\WORKS\WS\WS_Android\CR6(R) && gitk && rails s --port 3001
 
-# Pushd
-a p && pushd C:\WORKS\WS\WS_Android\CR6(R)
-
 # Pushd / No "a p"
 pushd C:\WORKS\WS\WS_Android\CR6(R)
 
@@ -13,7 +10,7 @@ a p && pushd C:\WORKS\WS\WS_Android\CR6(R) && gitk
 # Server/ No git
 a p && pushd C:\WORKS\WS\WS_Android\CR6(R) && rails s --port 3001
 
-a
+# Pushd + git
 pushd C:\WORKS\WS\WS_Android\CR6(R) && gitk
 
 gitk

@@ -40,6 +40,8 @@ gem 'rails-i18n'
 
 gem 'will_paginate'
 
+gem 'rubyzip', '0.9.9'
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
