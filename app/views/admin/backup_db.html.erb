@@ -6,9 +6,23 @@
 <%= link_to "Build CSV",
 		:controller => "admin",
 		:action => "backup_db",
-		:dl => "build_csv"%>
+		:dl => "build_csv"%> | 
 		
-<%= link_to "Words",
+<%= link_to "Zip file",
+		:controller => "admin",
+		:action => "backup_db",
+		:dl => "zip_file"%> | 
+
+<%#= link_to "Words",
 		:controller => "admin",
 		:action => "backup_db",
 		:dl => "words"%>
+		
+<% @model_names.each do |name| %>
+
+	<%= link_to name.capitalize,
+			:controller => "admin",
+			:action => "backup_db",
+			:dl => name %> | 
+
+<% end %>
