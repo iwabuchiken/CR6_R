@@ -426,7 +426,8 @@ class WordsController < ApplicationController
                   __FILE__.split("/")[-1],
                   __LINE__.to_s)        
                   
-            _post_data(BACKUP_URL, @word)
+            _post_data(Const::BACKUP_URL_WORDS, @word)
+            # _post_data(BACKUP_URL, @word)
             
         else
           

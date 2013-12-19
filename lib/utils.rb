@@ -526,7 +526,8 @@ end
 
 def _get_backup_url
     
-    return BACKUP_URL
+    return Const::BACKUP_URL_WORDS
+    # return BACKUP_URL
     
 end
 
