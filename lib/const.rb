@@ -17,5 +17,12 @@ module Const
     LOG_PATH    = "doc/mylog"
     
     LOG_FILE_NAME = "log.log"
-    
+
+    module ViewWords
+        
+        SearchTagHidden = "search_w"
+        
+        SearchTag        = "search"
+        
+    end    
 end

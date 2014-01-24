@@ -22,16 +22,21 @@ rails s --port 3001
 g p origin master && g p heroku master
 
 
+
+
+
+
+# Git push
+
+g p origin master && g p heroku master
+g p origin master && g p heroku master && heroku run rake db:migrate
+
 [Git]
 git init && g a . && gitk
 g a . && gitk
 
 git log --grep=master -6
 g log --grep="\bm\b"
-
-# Git push
-g p origin master && g p heroku master && heroku run rake db:migrate
-g p origin master && g p heroku master
 
 [heroku]
 heroku run console

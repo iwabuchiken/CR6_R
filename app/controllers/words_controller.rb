@@ -1,3 +1,4 @@
+#coding:utf-8
 require 'socket'
 # require 'request' # => cannot load such file -- request
 require_dependency 'basic'
@@ -73,15 +74,42 @@ class WordsController < ApplicationController
       
     
       if since == nil
-
+        
+        # Search words
+        search_mode = params[Const::ViewWords::SearchTagHidden]
+        
         logout("since == nil")
         #words = Word.all
         
         if lang_id == -1
-              words = Word.paginate(
-                            :page => params[:page],
-                            :order => 'created_at asc',
-                            :per_page => @per_page)
+            
+            if search_mode
+                
+                keyword = params[Const::ViewWords::SearchTag]
+                
+                words = Word.paginate(
+                    :page => params[:page],
+                    :conditions => [
+                            "#{search_mode} LIKE ?",
+                            keyword],
+                            # "#{params[Const::ViewWords::SearchTag]}"],
+                    :order => 'created_at asc',
+                    :per_page => @per_page)
+                                
+            else
+                
+                words = Word.paginate(
+                                :page => params[:page],
+                                # :conditions => ["w1 LIKE ?", "学%"],                                :order => 'created_at asc',
+                                :per_page => @per_page)
+                
+            end
+            
+            # words = Word.paginate(
+                            # :page => params[:page],
+                            # :conditions => ["w1 LIKE ?", "学%"],
+                            # :order => 'created_at asc',
+                            # :per_page => @per_page)
                             
         else 
         
