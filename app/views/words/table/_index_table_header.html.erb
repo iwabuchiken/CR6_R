@@ -1,8 +1,79 @@
   <tr>
   	<th><%= link_to 'Id', :controller => "words", :action => "index", :sort => "id" %></th>
-    <th><%= link_to 'W1', :controller => "words", :action => "index", :sort => "w1" %></th>
-    <th><%= link_to 'W2', :controller => "words", :action => "index", :sort => "w2" %></th>
-    <th><%= link_to 'W3', :controller => "words", :action => "index", :sort => "w3" %></th>
+  	
+    <th>
+    	<%= link_to 'W1',
+    			:controller => "words",
+    			:action => "index",
+    			:sort => "w1" %>
+    	
+    	<%= form_tag('#', :method => :get) do %>
+    	
+			<%= text_field_tag\
+						"search_w1",
+						nil,
+						# nil,
+						:size => '5',
+						:name => Const::ViewWords::SearchTag,
+						:style => "text-align: right;" %>
+    	
+    		<%= hidden_field \
+    				:search, :w,
+    				:name => Const::ViewWords::SearchTagHidden,
+    				# :name => 'search_w',
+    				:value => 'w1' %>
+    	
+			<%= submit_tag "Search" %>
+    	
+    	<% end %><!-- <%#= form_tag('#', :method => :get) do %> -->
+    	
+    	<%= form_tag('#', :method => :get) do %>
+    	
+			<%= submit_tag "Clear" %>
+    	
+    	<% end %><!-- <%#= form_tag('#', :method => :get) do %> -->
+    	
+    	
+    </th>
+    
+    <th>
+    	<%= link_to 'W2', :controller => "words", :action => "index", :sort => "w2" %>
+    	
+    	<%= form_tag('#', :method => :get) do %>
+    	
+			<%= text_field_tag\
+						"search_w2",
+						nil,
+						:size => '5',
+						:style => "text-align: right;" %>
+    	
+    		<%= submit_tag "Search" %>
+    	
+    	<% end %>
+
+    </th>
+    
+    <th>
+    	
+    	<%= link_to 'W3',
+    			:controller => "words",
+    			:action => "index",
+    			:sort => "w3" %>
+    	
+    	<%= form_tag('#', :method => :get) do %>
+    	
+			<%= text_field_tag\
+						"search_w3",
+						nil,
+						:size => '5',
+						:style => "text-align: right;" %>
+    	
+    		<%= submit_tag "Search" %>
+    	
+    	<% end %>
+    	
+    </th>
+    
     <th>Text ids</th>
     <th><%= link_to 'Text', :controller => "words", :action => "index", :sort => "text_id" %></th>
     
