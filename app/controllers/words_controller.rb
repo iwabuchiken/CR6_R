@@ -89,6 +89,7 @@ class WordsController < ApplicationController
                 
                 words = Word.paginate(
                     :page => params[:page],
+                    
                     #REF conditions http://stackoverflow.com/questions/3012887/multiple-conditions-with-will-paginate answered Jun 10 '10 at 9:02
                     :conditions => [
                             "#{search_mode} LIKE ?",
