@@ -616,6 +616,13 @@ class TextsController < ApplicationController
     
     words = text.words
     
+    #debug
+    msg= "Calling => _show__1_colorize_words__ShrinkWords(words)"
+    write_log(msg, __FILE__, __LINE__)
+    
+    words = _show__1_colorize_words__ShrinkWords(words)
+    
+    
     # words = Word.find_by_text_id(text_id)
     
     ##########################
@@ -659,7 +666,71 @@ class TextsController < ApplicationController
     return text.text
     
   end#def _show__1_colorize_words(@text)
-  
+
+    def _show__1_colorize_words__ShrinkWords(words)
+        
+        len = words.length
+        
+        #debug
+        msg= "len=#{len.to_s}"
+        write_log(msg, __FILE__, __LINE__)
+        
+        new_words = words
+        
+        len.times do |i|    # => Each word
+            
+            #debug
+            msg= "i=#{i.to_s}"
+            write_log(msg, __FILE__, __LINE__)
+            
+            len.times do |j|# => Lookup
+                
+                #debug
+                msg= "i=#{i}/j=#{j}"
+                write_log(msg, __FILE__, __LINE__)
+                
+                target_w = words[i]
+                refer_w  = words[j]
+                
+                if words[i] == nil or words[j] == nil
+                    
+                    next
+                    
+                end
+                
+                target  = words[i].w1
+                
+                refer   = words[j].w1
+                
+                #debug
+                msg= "target=#{target}/refer=#{refer}"
+                # write_log(msg, __FILE__, __LINE__)
+                
+                res = refer.include?(target) && refer != target
+                # res = refer.include?(target)
+                #res = words[j].w1.include?(words[i].w1)
+                
+                if res == true
+                    
+                    write_log(msg, __FILE__, __LINE__)
+                    new_words = new_words - [target_w]
+                    # new_words.delete(target_w)
+                    # new_words.delete(words[i])
+                  
+                    break
+                    
+                end
+=begin
+=end
+            
+            end#len.times do |j|
+            
+        end#len.times do |i|
+        
+        return new_words
+        
+    end#_show__1_colorize_words__ShrinkWords(words)
+    
   def _add_span2(text, word, start_tag, end_tag)
 
     # => REF /#{}/ http://stackoverflow.com/questions/2648054/ruby-recursive-regex answered Apr 15 '10 at 18:48
