@@ -305,7 +305,18 @@ class TextsController < ApplicationController
       
       @text.text = _show__1_colorize_words(@text)
       
-      point = "。"
+      point = ""
+      
+      if @text.lang.name == "Chinese" ||
+          @text.lang.name == "Japanese"
+        
+          point = "。"
+          
+      else
+          
+          point = "\\."
+        
+      end
       
       @text.text = @text.text.gsub(/#{point}/, "。<br/>-")
       

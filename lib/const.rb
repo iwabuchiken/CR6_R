@@ -18,6 +18,7 @@ module Const
     
     LOG_FILE_NAME = "log.log"
 
+    #REF module in module // http://stackoverflow.com/questions/4255596/rails-3-including-nested-module-inside-controller answered Nov 23 '10 at 11:58
     module ViewWords
         
         SearchTagHidden = "search_w"
