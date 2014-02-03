@@ -87,6 +87,11 @@ class WordsController < ApplicationController
                 
                 keyword = params[Const::ViewWords::SearchTag]
                 
+                if !keyword.include?("%")
+                  
+                    keyword = "%#{keyword}%"
+                end
+                
                 words = Word.paginate(
                     :page => params[:page],
                     
@@ -94,6 +99,7 @@ class WordsController < ApplicationController
                     :conditions => [
                             "#{search_mode} LIKE ?",
                             keyword],
+                            # "%#{keyword}%"],
                             # "#{params[Const::ViewWords::SearchTag]}"],
                     :order => 'created_at asc',
                     :per_page => @per_page)

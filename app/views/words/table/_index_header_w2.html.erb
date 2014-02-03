@@ -1,0 +1,32 @@
+    	<%= link_to 'W2',
+    			:controller => "words",
+    			:action => "index",
+    			:sort => "w2" %>
+    	
+    	<%= form_tag('#', :method => :get) do %>
+    	
+    		<!-- REF http://api.rubyonrails.org/classes/ActionView/Helpers/FormTagHelper.html#method-i-text_field_tag -->
+			<%= text_field_tag\
+						"search_w2",
+						nil,
+						# nil,
+						:size => '5',
+						:name => Const::ViewWords::SearchTag,
+						:style => "text-align: right;",
+						:class => "focus" %>
+    	
+    		<%= hidden_field \
+    				:search, :w,
+    				:name => Const::ViewWords::SearchTagHidden,
+    				# :name => 'search_w',
+    				:value => 'w2' %>
+    	
+			<%= submit_tag "Search" %>
+    	
+    	<% end %><!-- <%#= form_tag('#', :method => :get) do %> -->
+    	
+    	<%= form_tag('#', :method => :get) do %>
+    	
+			<%= submit_tag "Clear" %>
+    	
+    	<% end %><!-- <%#= form_tag('#', :method => :get) do %> -->
