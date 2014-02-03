@@ -38,5 +38,8 @@ CR6R::Application.configure do
     #REF https://github.com/teohm/require_reloader
     RequireReloader.watch :utils  
     RequireReloader.watch :const  
-  
+
+  #REF http://stackoverflow.com/questions/7877180/ror-precompiling-assets-fail-while-rake-assetsprecompile-on-basically-empty-a answered Oct 24 '11 at 16:09
+  config.assets.js_compressor = :closure
+    
 end

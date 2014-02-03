@@ -13,6 +13,9 @@ group :development do
   
   gem 'require_reloader'
   
+  #REF http://stackoverflow.com/questions/7877180/ror-precompiling-assets-fail-while-rake-assetsprecompile-on-basically-empty-a answered Oct 24 '11 at 16:09
+  gem 'closure-compiler'
+  
 end
 
 # Gems used only for assets and not required
@@ -23,7 +26,8 @@ group :assets do
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platform => :ruby
-  gem 'uglifier', '>= 1.0.3'
+  gem 'uglifier', '1.0.4'
+  #gem 'uglifier', '>= 1.0.3'
 end
 
 # gem 'jquery-rails', '2.0.0'
