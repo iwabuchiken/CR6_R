@@ -23,7 +23,11 @@
     <th><%= link_to 'Text', :controller => "words", :action => "index", :sort => "text_id" %></th>
     
     <th>
-    	<%= link_to 'Lang', :controller => "words", :action => "index", :sort => "lang" %>
+    	<%= link_to 'Lang',
+    			:controller => "words",
+    			:action => "index",
+    			:sort => "lang" %>
+    			
     	<br>
     	    	<form action="/words" method="get">
     	

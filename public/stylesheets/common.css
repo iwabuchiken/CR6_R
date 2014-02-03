@@ -15,3 +15,7 @@ table, th, td {
 .table_id {
 	text-align: center;
 }
+
+th {
+	backgroud-color: yellow;
+}

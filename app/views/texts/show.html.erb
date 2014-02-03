@@ -1,24 +1,7 @@
 <p id="notice"><%= notice %></p>
 
-
-	<div id="home" data-role="page">
-		
-		<div data-role="header">
-			<h1>Sample</h1>
-		</div>
-
-	</div>
-
 <p>
-  <b>Id:</b>
-  <%= @text.id %>
-</p>
-
-
-
-
-<p>
-  <b>Text:</b>
+  <b>[Text]</b>
   <br />
   <!-- REF raw http://stackoverflow.com/questions/4251284/raw-vs-html-safe-vs-h-to-unescape-html asked Nov 22 '10 at 23:27 -->
   <%= raw @text.text %>
@@ -41,7 +24,26 @@
 		
 		<tr>
 			<td>
-				<b>Word ids</b>
+				<b>ID</b>
+			</td>
+			<td>
+  				<%= @text.id %>
+			</td>
+		</tr>
+		
+		<tr>
+			<td>
+				<% if @text.word_ids != nil %>
+				
+					<% msg = "Word ids (#{@text.word_ids.size.to_s}" %>
+					
+				<% else %>
+				
+					<% msg = "Word ids => nil" %>
+				
+				<% end %>
+				
+					<b>Word ids (<%= @text.word_ids.size %>)</b>
 			</td>
 			<td>
   				<%= @text.word_ids %>

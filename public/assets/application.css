@@ -12,6 +12,18 @@
 
 */
 
+
+table, th, td {
+	border: 2px solid blue;
+}
+
+.table_id {
+	text-align: center;
+}
+
+th {
+	background-color: yellow;
+}
 /* line 1, ../../app/assets/stylesheets/scaffolds.css.scss */
 body {
   background-color: #fff;
