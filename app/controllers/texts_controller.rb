@@ -810,6 +810,10 @@ class TextsController < ApplicationController
                 
                 if target == refer
                 # if target == refer and target_w.w3 != refer_w.w3
+                
+                    #debug
+                    msg = "Equal: target=#{target}/refer=#{refer}"
+                    write_log(msg, __FILE__, __LINE__)
                     
                     if flag == false
                         
@@ -836,6 +840,12 @@ class TextsController < ApplicationController
                     #debug
                     msg = "word removed => #{refer_w.w1}"
                     
+                    write_log(msg, __FILE__, __LINE__)
+                
+                else#if target == refer
+                    
+                    #debug
+                    msg = "Not equal: target=#{target}/refer=#{refer}"
                     write_log(msg, __FILE__, __LINE__)
                     
                 end#if target == refer
