@@ -1,3 +1,27 @@
+#encoding: utf-8
+
+    #REF http://edgeguides.rubyonrails.org/active_record_validations.html 6.1 Custom Validators
+    class MyValidator < ActiveModel::Validator
+      def validate(record)
+          
+          w = record.w1
+          
+          results = Word.where(:w1 => w, :lang_id => record.lang_id)
+          
+          # if results != nil or results.length > 0 \
+          if results.length > 0 \
+                and record.lang.name != "German"
+            
+            record.errors[:w1] << 'すでに、登録されてます'
+            
+          end
+          
+        # unless record.name.starts_with? 'X'
+          # record.errors[:name] << 'Need a name starting with X please!'
+        # end
+      end
+    end 
+    
 class Word < ActiveRecord::Base
   
   #####################################
@@ -6,7 +30,9 @@ class Word < ActiveRecord::Base
   #
   #####################################
   # validates :w1, uniqueness: true
-  validates_uniqueness_of :w1, :scope => :lang_id
+  # validates_uniqueness_of :w1, :scope => :lang_id
+  include ActiveModel::Validations
+  validates_with MyValidator
   
   #####################################
   #
@@ -57,4 +83,6 @@ class Word < ActiveRecord::Base
     
   end#def update_created_at_millsec
 
+
 end
+

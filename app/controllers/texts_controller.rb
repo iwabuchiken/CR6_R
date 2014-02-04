@@ -307,8 +307,8 @@ class TextsController < ApplicationController
       
       point = ""
       
-      if @text.lang.name == "Chinese" ||
-          @text.lang.name == "Japanese"
+      if (@text.lang != nil and @text.lang.name == "Chinese") ||
+          (@text.lang != nil and @text.lang.name == "Japanese")
         
           point = "。"
           
@@ -598,6 +598,10 @@ class TextsController < ApplicationController
     
   end#def _build_word_list__3_register_words(text_id, word_ids, lang_id)
   
+  #===================================
+  # => @var words: Array<Word>
+  # => @var 
+  #===================================
   def _show__1_colorize_words(text)
     
     text_id = text.id
@@ -617,11 +621,24 @@ class TextsController < ApplicationController
     words = text.words
     
     #debug
+    # msg= words.collect{|w| w.w1}.to_s
+    msg= "words => " + words.collect{|w| "#{w.w1}/#{w.w2}/#{w.w3}"}.to_s
+    write_log(msg, __FILE__, __LINE__)
+    
+    
+    
+    #debug
     msg= "Calling => _show__1_colorize_words__ShrinkWords(words)"
     write_log(msg, __FILE__, __LINE__)
     
     words = _show__1_colorize_words__ShrinkWords(words)
     
+    # Shrink => German texts
+    if text.lang != nil and text.lang.name == "German"
+      
+        words = _show__1_colorize_words__ShrinkWords_Ge(words)
+    
+    end
     
     # words = Word.find_by_text_id(text_id)
     
@@ -636,7 +653,10 @@ class TextsController < ApplicationController
     # tag2 = "</span>"
     
     for i in 0..(words.length - 1)
-        tag1 = "<span style='color: blue;' onClick='alert(\"#{words[i].w1}/#{words[i].w2}/#{words[i].w3}\");'>"
+        tag1 = "<span style='color: 
+                blue;'onClick='alert(\"#{words[i].w1}"\
+                    + "/#{words[i].w2}"\
+                    + "/#{words[i].w3}\");'>"
         # tag1 = "<span style='color: blue;' onClick='alert(\"hi\");'>" # => Works
         # tag1 = "<span style='color: blue;' onmouseover='alert(\"hi\");'>" # => Works
         # tag1 = "<span style='color: blue; onmouseover='alert('hi');'>"
@@ -679,15 +699,15 @@ class TextsController < ApplicationController
         
         len.times do |i|    # => Each word
             
-            #debug
-            msg= "i=#{i.to_s}"
-            write_log(msg, __FILE__, __LINE__)
+            # #debug
+            # msg= "i=#{i.to_s}"
+            # write_log(msg, __FILE__, __LINE__)
             
             len.times do |j|# => Lookup
                 
-                #debug
-                msg= "i=#{i}/j=#{j}"
-                write_log(msg, __FILE__, __LINE__)
+                # #debug
+                # msg= "i=#{i}/j=#{j}"
+                # write_log(msg, __FILE__, __LINE__)
                 
                 target_w = words[i]
                 refer_w  = words[j]
@@ -702,9 +722,9 @@ class TextsController < ApplicationController
                 
                 refer   = words[j].w1
                 
-                #debug
-                msg= "target=#{target}/refer=#{refer}"
-                # write_log(msg, __FILE__, __LINE__)
+                # #debug
+                # msg= "target=#{target}/refer=#{refer}"
+                # # write_log(msg, __FILE__, __LINE__)
                 
                 res = refer.include?(target) && refer != target
                 # res = refer.include?(target)
@@ -730,7 +750,85 @@ class TextsController < ApplicationController
         return new_words
         
     end#_show__1_colorize_words__ShrinkWords(words)
-    
+
+    def _show__1_colorize_words__ShrinkWords_Ge(words)
+        
+        len = words.length
+        
+        # If words has only one Word instance
+        #   then, return words unprocessed
+        if len < 2
+          
+          return words
+          
+        end
+        
+        #debug
+        msg = words.collect{|w| "#{w.w1}/#{w.w2}/#{w.w3}"}.to_s
+        
+        write_log(msg, __FILE__, __LINE__)
+        
+        
+        # Processing starts
+        
+        new_words = words
+        
+        1.times do |i|
+            
+            target_w = words[i]
+            
+            if target_w == nil
+                
+                next
+                
+            end
+            
+            # i => Counter for w2, w3
+            i = 1
+            
+            len.times do |j|
+                
+                refer_w = words[j]
+                
+                if refer_w == nil
+                    
+                    next
+                    
+                end
+                
+                target = target_w.w1
+                refer = refer_w.w1
+                
+                if target == refer
+                # if target == refer and target_w.w3 != refer_w.w3
+                    
+                    target_w.w2 += "," + i.to_s + "~" + refer_w.w2
+                    
+                    target_w.w3 += "," + i.to_s + "~" + refer_w.w3
+                    
+                    i += 1
+                    
+                    new_words -= [refer_w]
+                    
+                end#if target == refer
+                
+            end#len.times do |j|
+            
+            new_words.push(target_w)
+            
+            #debug
+            msg = new_words.collect{|w| "#{w.w1}/#{w.w2}/#{w.w3}"}
+            
+            write_log(msg, __FILE__, __LINE__)
+            
+        end#len.times do |i|
+        
+        
+        
+        return new_words
+        
+    end#_show__1_colorize_words__ShrinkWords_Ge(words)
+       
   def _add_span2(text, word, start_tag, end_tag)
 
     # => REF /#{}/ http://stackoverflow.com/questions/2648054/ruby-recursive-regex answered Apr 15 '10 at 18:48
@@ -760,6 +858,12 @@ class TextsController < ApplicationController
     
   end#def _add_span(text, keyword, start_tag, end_tag)
   
+  #===================================
+  # _add_span2_GeFrEn(text, word, start_tag, end_tag)
+  #
+  # Split the text by " ". For each token, process
+  #   the tagging
+  #===================================
   def _add_span2_GeFrEn(text, word, start_tag, end_tag)
 
       # => REF /#{}/ http://stackoverflow.com/questions/2648054/ruby-recursive-regex answered Apr 15 '10 at 18:48

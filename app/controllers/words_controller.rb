@@ -87,8 +87,10 @@ class WordsController < ApplicationController
                 
                 keyword = params[Const::ViewWords::SearchTag]
                 
-                if !keyword.include?("%")
+                if !keyword.include?("%") and
+                      !keyword.include?("_")
                   
+                    # keyword = "%#{keyword}%"
                     keyword = "%#{keyword}%"
                 end
                 
@@ -98,6 +100,7 @@ class WordsController < ApplicationController
                     #REF conditions http://stackoverflow.com/questions/3012887/multiple-conditions-with-will-paginate answered Jun 10 '10 at 9:02
                     :conditions => [
                             "#{search_mode} LIKE ?",
+                            # "#{search_mode} REGEXP ?",# => no such function: REGEXP
                             keyword],
                             # "%#{keyword}%"],
                             # "#{params[Const::ViewWords::SearchTag]}"],
