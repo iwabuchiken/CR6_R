@@ -786,6 +786,11 @@ class TextsController < ApplicationController
             # i => Counter for w2, w3
             i = 1
             
+            # flag => Used in building strings for w2 and w3
+            # => true if refer word is the second of such in
+            # =>    words
+            flag = false
+            
             len.times do |j|
                 
                 refer_w = words[j]
@@ -799,12 +804,26 @@ class TextsController < ApplicationController
                 target = target_w.w1
                 refer = refer_w.w1
                 
+                
                 if target == refer
                 # if target == refer and target_w.w3 != refer_w.w3
                     
-                    target_w.w2 += "," + i.to_s + "~" + refer_w.w2
-                    
-                    target_w.w3 += "," + i.to_s + "~" + refer_w.w3
+                    if flag == false
+                        
+                        target_w.w2 = i.to_s + "~" + refer_w.w2
+                        
+                        target_w.w3 = i.to_s + "~" + refer_w.w3
+                        
+                        flag = true
+                        
+                    else
+                        
+                        target_w.w2 += "," + i.to_s + "~" + refer_w.w2
+                        
+                        target_w.w3 += "," + i.to_s + "~" + refer_w.w3
+                        
+                        
+                    end
                     
                     i += 1
                     
