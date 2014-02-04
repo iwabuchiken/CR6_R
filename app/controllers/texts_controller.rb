@@ -804,15 +804,19 @@ class TextsController < ApplicationController
                 target = target_w.w1
                 refer = refer_w.w1
                 
+                #debug
+                msg = "target=#{target}/refer=#{refer}"
+                write_log(msg, __FILE__, __LINE__)
                 
                 if target == refer
                 # if target == refer and target_w.w3 != refer_w.w3
                     
                     if flag == false
                         
-                        target_w.w2 = i.to_s + "~" + refer_w.w2
-                        
-                        target_w.w3 = i.to_s + "~" + refer_w.w3
+                        target_w.w2 = refer_w.w2
+                        target_w.w3 = refer_w.w3
+                        # target_w.w2 = i.to_s + "~" + refer_w.w2
+                        # target_w.w3 = i.to_s + "~" + refer_w.w3
                         
                         flag = true
                         
@@ -822,10 +826,10 @@ class TextsController < ApplicationController
                         
                         target_w.w3 += "," + i.to_s + "~" + refer_w.w3
                         
+                        i += 1
                         
                     end
                     
-                    i += 1
                     
                     new_words -= [refer_w]
                     
