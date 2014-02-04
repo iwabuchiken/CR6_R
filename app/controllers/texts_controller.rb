@@ -829,6 +829,11 @@ class TextsController < ApplicationController
                     
                     new_words -= [refer_w]
                     
+                    #debug
+                    msg = "word removed => #{refer_w.w1}"
+                    
+                    write_log(msg, __FILE__, __LINE__)
+                    
                 end#if target == refer
                 
             end#len.times do |j|
