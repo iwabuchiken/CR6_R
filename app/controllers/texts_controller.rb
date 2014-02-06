@@ -773,7 +773,8 @@ class TextsController < ApplicationController
         
         new_words = words
         
-        1.times do |i|
+        len.times do |i|
+        # 1.times do |i|
             
             target_w = words[i]
             
