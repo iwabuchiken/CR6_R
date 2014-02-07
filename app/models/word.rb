@@ -32,7 +32,8 @@ class Word < ActiveRecord::Base
   # validates :w1, uniqueness: true
   # validates_uniqueness_of :w1, :scope => :lang_id
   include ActiveModel::Validations
-  validates_with MyValidator
+  # validates_with MyValidator
+  validates_with MyValidator, :on => :create
   
   #####################################
   #
