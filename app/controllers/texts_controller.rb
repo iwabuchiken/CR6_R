@@ -655,8 +655,8 @@ class TextsController < ApplicationController
     for i in 0..(words.length - 1)
         tag1 = "<span style='color: 
                 blue;'onClick='alert(\"#{words[i].w1}"\
-                    + "/#{words[i].w2}"\
-                    + "/#{words[i].w3}\");'>"
+                    + " / #{words[i].w2}"\
+                    + " / #{words[i].w3}\");'>"
         # tag1 = "<span style='color: blue;' onClick='alert(\"hi\");'>" # => Works
         # tag1 = "<span style='color: blue;' onmouseover='alert(\"hi\");'>" # => Works
         # tag1 = "<span style='color: blue; onmouseover='alert('hi');'>"
@@ -752,6 +752,134 @@ class TextsController < ApplicationController
     end#_show__1_colorize_words__ShrinkWords(words)
 
     def _show__1_colorize_words__ShrinkWords_Ge(words)
+        
+        len = words.length
+        
+        # If words has only one Word instance
+        #   then, return words unprocessed
+        if len < 2
+          
+          return words
+          
+        end
+        
+        #debug
+        msg = words.collect{|w| "#{w.w1}/#{w.w2}/#{w.w3}"}.to_s
+        
+        write_log(msg, __FILE__, __LINE__)
+        
+        
+        # Processing starts
+        
+        new_words = []; temp_words = []
+
+        
+        len.times do |i|
+            
+            if temp_words.include?(words[i])
+                next
+            end
+            
+            target_w = words[i]
+            
+            if target_w == nil
+                
+                next
+                
+            end
+            
+            # i => Counter for w2, w3
+            #i = 1
+            k = 1
+            
+            # flag => Used in building strings for w2 and w3
+            # => true if refer word is the second of such in
+            # =>    words
+            flag = false
+            
+            len.times do |j|
+                
+                refer_w = words[j]
+                
+                if refer_w == nil
+                    
+                    next
+                    
+                end
+                
+                target_w1   = target_w.w1
+                refer_w1    = refer_w.w1
+                
+                # #debug
+                # msg = "target_w1=#{target_w1}/refer_w1=#{refer_w1}"
+                # write_log(msg, __FILE__, __LINE__)
+                
+                if target_w1 == refer_w1
+                # if target == refer and target_w.w3 != refer_w.w3
+                
+                    #debug
+                    msg = "Equal: target_w1=
+                            #{target_w1}/refer_w1=#{refer_w1}"
+                    write_log(msg, __FILE__, __LINE__)
+                    
+                    if target_w != refer_w
+                        
+                        #debug
+                        msg = "Equal: target_w=
+                                (#{target_w.w1}-#{target_w.w2})
+                                /refer_w=(#{refer_w.w1}-#{refer_w.w2})"
+                                
+                        write_log(msg, __FILE__, __LINE__)
+                        
+                            
+                        target_w.w2 += " * " + k.to_s + "~" + refer_w.w2
+                        #target_w.w2 += "," + k.to_s + "~" + refer_w.w2
+                        
+                        target_w.w3 += " * " + k.to_s + "~" + refer_w.w3
+                        #target_w.w3 += "," + k.to_s + "~" + refer_w.w3
+                        #target_w.w2 += "," + i.to_s + "~" + refer_w.w2
+                        
+                        #target_w.w3 += "," + i.to_s + "~" + refer_w.w3
+                        
+                        #i += 1
+                        k += 1
+                            
+                        #new_words.push(target_w)
+                        
+                        temp_words.push(refer_w)
+                        
+                    end#if target_w != refer_w
+                
+                else#if target_w1 == refer_w1
+                    
+                    # #debug
+                    # msg = "Not equal: target_w1=#{target_w1}
+                            # /refer_w1=#{refer_w1}_w1"
+                            
+                    write_log(msg, __FILE__, __LINE__)
+                    
+                end#if target_w1 == refer_w1
+                
+            end#len.times do |j|
+            
+            new_words.push(target_w)
+            
+        end#len.times do |i|
+        
+        #debug
+        
+        msg = new_words.collect{|w| "#{w.w1}/#{w.w2}/#{w.w3}"}.to_s
+        write_log("new_words => #{msg}", __FILE__, __LINE__)
+        
+        msg = temp_words.collect{|w| "#{w.w1}/#{w.w2}/#{w.w3}"}
+        
+        write_log("temp_words => #{msg}", __FILE__, __LINE__)
+        
+        return new_words
+        
+    end#_show__1_colorize_words__ShrinkWords_Ge(words)
+       
+    def _show__1_colorize_words__ShrinkWords_Ge_v_1_0e(words)
         
         len = words.length
         

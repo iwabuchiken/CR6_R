@@ -73,6 +73,24 @@ def job2
     
 end#def job
 
+def job3
+    
+    t1 = TEST.new()
+    t2 = TEST.new()
+
+    t1.a = "xxxxxxxxxxxx"
+    t1.b = "yyyyyyyyyyyyyyy"
+    
+    p t1
+    
+    x = t1.a
+    
+    x = "xx"
+    
+    p t1
+    
+end#def job3
+
 
 #job()
 job2()
