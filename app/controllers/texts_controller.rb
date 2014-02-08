@@ -270,6 +270,91 @@ class TextsController < ApplicationController
   end#def _index_param_sort
   
   def _index_param_lang_id
+    # Validation
+    if params[:text] == nil
+        
+        # session => set?
+        session_lang_id = session[:lang_id]
+        
+        # Session
+        if session_lang_id != nil && session_lang_id != ""
+            
+            #debug
+            msg= "params[:text] => nil, 
+                    but session[:lang_id] is set => 
+                    #{session[:lang_id]}"
+                    
+            write_log(msg, __FILE__, __LINE__)
+          
+            lang_id = session_lang_id
+            
+            return lang_id.to_i
+          
+        end
+        
+        #debug
+        msg= "params[:text] => nil"
+        write_log(msg, __FILE__, __LINE__)
+        
+        return -1
+    
+    elsif params[:text] != nil && params[:text] == ""
+
+        #debug
+        msg= 'params[:text] != nil && params[:text] == ""'
+        write_log(msg, __FILE__, __LINE__)
+        
+        return -1
+      
+    else#   params[:text] => {"lang_id"=>""} 
+      
+        #debug
+        msg= "params[:text] => #{params[:text]}"
+        write_log(msg, __FILE__, __LINE__)
+        
+        # 'lang_id' => "" ==> means, the user chose a blank
+        # => entry in the 'Lang' dropdown list
+        session[:lang_id] = nil
+      
+      lang_id = params[:text][:lang_id]
+      
+    end#if params[:text] == nil
+    
+    # lang_id parameter => set?
+    if lang_id != nil && lang_id != ""
+        
+        session[:lang_id] = lang_id
+        
+        #debug
+        msg= "session[:lang_id] => #{session[:lang_id]}"
+        write_log(msg, __FILE__, __LINE__)
+        
+        return lang_id.to_i
+        
+    end
+    
+    # session => set?
+    session_lang_id = session[:lang_id]
+    
+    #debug
+    msg= "session[:lang_id] => #{session[:lang_id]}"
+    write_log(msg, __FILE__, __LINE__)
+    
+    # Session
+    if session_lang_id != nil && session_lang_id != ""
+      
+        lang_id = session_lang_id
+        
+        return lang_id.to_i
+      
+    end
+    
+    # No param, no session => return -1
+    return -1
+    
+  end#def _index_param_lang_id
+  
+  def _index_param_lang_id__D_48_v_1_1a
     
     if params[:text] == nil
 
@@ -285,7 +370,16 @@ class TextsController < ApplicationController
       
     end
     
+    # Session
+    if session[:lang_id] != nil && lang_id != ""
+      
+        lang_id = session[:lang_id]
+      
+    end
+    
     if lang_id != nil && lang_id != ""
+      
+      
       
       return lang_id.to_i
       
