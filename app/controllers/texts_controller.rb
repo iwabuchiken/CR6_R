@@ -67,7 +67,16 @@ class TextsController < ApplicationController
       # @texts = Text.all
   
       respond_to do |format|
+          # format.html # index.html.erb
+          # format.html {render :action => 'index', :page => 2} # index.html.erb
+          # format.html {render :page => 2} # index.html.erb
+          # format.html {render :html => {:page => 2}} # index.html.erb
+          # format.html.parameters.push("page=2") # index.html.erb
+          # format.html {redirect_to :action => 'index', :page => 2} # => このウェブページにはリダイレクト ループが含まれていますbu
           format.html # index.html.erb
+          
+          # write_log(msg, __FILE__, __LINE__)
+          
           format.json { render json: @texts }
       end
       
